@@ -45,6 +45,7 @@
 
 
 <div id="mySidenav" class="sidenav" style="margin-top: 45px"  [ngStyle]="{width: property}">
+  <a href="javascript:void(0)" class="closebtn" (click)="hideSideNav()">&times;</a>
   <a href="#">About</a>
   <a href="#">Services</a>
   <a href="#">Clients</a>
@@ -59,7 +60,7 @@
 
 <div style="margin-top: 50px">
   <button *ngIf="navMode" class="btn btn-outline-primary" (click)="showSideNav()">Open</button>
-  <button *ngIf="!navMode" class="btn btn-outline-primary" (click)="hideSideNav()">Close</button>
+  <!--<button *ngIf="!navMode" class="btn btn-outline-primary" (click)="hideSideNav()">Close</button>-->
 </div>
 
 <!--<div style="margin-top: 50px">-->
