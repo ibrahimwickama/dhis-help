@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {MenuModule} from "../app/modules/menu/menu.module";
 import { ChartsComponent } from './components/charts/charts.component';
+import {HttpProviderService} from "./services/http-provider.service";
+import {UtilitiesService} from "./services/utilities.service";
 
 @NgModule({
   declarations: [
@@ -13,7 +15,7 @@ import { ChartsComponent } from './components/charts/charts.component';
   imports: [
     BrowserModule, MenuModule
   ],
-  providers: [],
+  providers: [HttpProviderService,UtilitiesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
