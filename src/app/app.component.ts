@@ -15,6 +15,14 @@ export class AppComponent implements OnInit{
   navMode:boolean = true;
   listOfApps:any =[];
   listOfAppsBackUp:any =[];
+  full:boolean = false;
+  show:any;
+  showHomeApps: boolean = false;
+  showCoreApps: boolean = false;
+  showCustomApps: boolean = true;
+  showMaintenanceApps: boolean = false;
+  showAbout: boolean = false;
+
 
   constructor(private httpProvider:HttpProviderService){
 
@@ -23,10 +31,51 @@ export class AppComponent implements OnInit{
     this.getAllAppsFromServer();
   }
 
+  fullIt(){
+    this.full = true;
+    this.show = 'box--show'
+}
+
   getAllAppsFromServer(){
     this.httpProvider.getAllApps().subscribe(listApps=>{
       this.listOfApps = this.listOfAppsBackUp = listApps;
     })
+  }
+
+  receiveNavOption(option){
+    if(option === 'core-apps'){
+      this.showCoreApps = true;
+      this.showHomeApps = false;
+      this.showAbout = false;
+      this.showCustomApps = false;
+      this.showMaintenanceApps = false;
+      console.log('core-apps')
+
+    }else if(option === 'maintenance-apps'){
+      this.showMaintenanceApps = true;
+      this.showCoreApps = false;
+      this.showHomeApps = false;
+      this.showAbout = false;
+      this.showCustomApps = false;
+      console.log('maintenance-apps')
+
+    }else if(option === 'custom-apps'){
+      this.showCustomApps = true;
+      this.showCoreApps = false;
+      this.showHomeApps = false;
+      this.showAbout = false;
+      this.showMaintenanceApps = false;
+      console.log('custom-apps')
+
+    }else if(option === 'about'){
+      this.showAbout = true;
+      this.showCoreApps = false;
+      this.showHomeApps = false;
+      this.showCustomApps = false;
+      this.showMaintenanceApps = false;
+      console.log('about')
+
+    }
   }
 
 
@@ -41,6 +90,7 @@ export class AppComponent implements OnInit{
     this.property = '0px';
     this.margin = '0px';
     this.navMode = true;
+    // this.full = false;
   }
 
 
@@ -55,6 +105,27 @@ export class AppComponent implements OnInit{
       this.listOfApps = this.listOfAppsBackUp;
     }
   }
+
+
+  getIcon(launchUrl, iconLink){
+    let newIconLink='';
+    if(iconLink['48'].substr(0,1) === '/'){
+      newIconLink = iconLink['48'].substr(1);
+    }else{
+      newIconLink = iconLink['48'];
+    }
+    let fullIconlink = launchUrl.split('index.html')[0]+newIconLink;
+    console.log("link "+fullIconlink)
+    return fullIconlink ;
+  }
+
+
+  trial(){
+    this.httpProvider.getUserGroups().subscribe(response =>{
+      console.log(" my users :"+JSON.stringify(response));
+    })
+  }
+
 
 
 
