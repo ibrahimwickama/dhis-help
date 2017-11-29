@@ -19,6 +19,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { CoreAppsComponent } from './pages/core-apps/core-apps.component';
 import {CoreAppsService} from "./services/core-apps.service";
 import { SideNavComponent } from './components/side-nav/side-nav.component';
+import {DhisHelpService} from "./services/dhis-help.service";
+import { GetHelpComponent } from './pages/get-help/get-help.component';
 
 @NgModule({
   declarations: [
@@ -34,12 +36,13 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
     EventCaptureComponent,
     HomeComponent,
     CoreAppsComponent,
-    SideNavComponent
+    SideNavComponent,
+    GetHelpComponent
   ],
   imports: [
     BrowserModule, MenuModule
   ],
-  providers: [HttpProviderService,UtilitiesService, CoreAppsService],
+  providers: [HttpProviderService,UtilitiesService, CoreAppsService, DhisHelpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

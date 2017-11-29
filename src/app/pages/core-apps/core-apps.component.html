@@ -1,0 +1,69 @@
+<!--The content below is only a placeholder and can be replaced.-->
+
+<!--<dhis-menu></dhis-menu>-->
+
+
+<!--Side Navigation Bar-->
+<div id="mySidenav" class="sidenav" style="margin-top: 45px"  [ngStyle]="{width: property}">
+  <a href="javascript:void(0)" class="closebtn" (click)="hideSideNav()" title="Close">&times;</a>
+  <a href="#" (click)="optionFromSideNav('core-apps')">Core Apps</a>
+  <a href="#" (click)="optionFromSideNav('maintenance-apps')">Maintenance Apps</a>
+  <a href="#" (click)="optionFromSideNav('custom-apps')">Custom Apps</a>
+  <a href="#" (click)="optionFromSideNav('about')">About</a>
+  <!--<a href="#" (click)="fullIt()">About</a>-->
+</div>
+
+<div id="main" [ngStyle]="{marginLeft: margin}">
+
+
+
+  <div style="margin-top: 50px;padding-bottom: 20px " class="row">
+    <!--<button *ngIf="navMode" class="btn btn-outline-primary" (click)="showSideNav()">Open</button>-->
+    <span *ngIf="navMode" (click)="showSideNav()" ><img src="./assets/side-nav-menu.png" class="menu-button" title="Menu"></span>
+
+
+    <!--<button *ngIf="!navMode" class="btn btn-outline-primary" (click)="hideSideNav()">Close</button>-->
+    <input type="text" name="search" class="form-control col-4" style="margin-left: 30% " placeholder="Search" (input)="getFilteredList($event)">
+  </div>
+
+
+  <div class="my-card-bundles">
+    <div class="row">
+      <div class="col"  >
+        <div class="my-columns" >
+
+          <div class="card myown-card" *ngFor="let app of listOfApps" >
+            <div class="my-card-image">
+              <div style="width: 100%; height: 250px; text-align: center" >
+                <img src="../assets/icons/dashboard.png" style="width: 280px; height: 250px">
+                <!--<img [src]="getIcon(app.launchUrl, app.icons)" style="width: 150px; height: 150px">-->
+              </div>
+
+              <div class="trial" style="width: 100%; height: 250px" >
+
+                <div style="color: white">
+                  {{app.description}}
+                </div>
+                <a href="{{app.launchUrl}}">
+                  <button  class="btn btn-outline-primary my-button"
+                           style="margin-top: 40%">use App</button></a>
+                <button  class="btn btn-outline-primary my-button"
+                         style="margin-top: 40%" routerLink="iArchive" >get Help</button>
+
+              </div>
+            </div>
+            <div class="my-card-label">
+              {{app.name}}
+            </div>
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+</div>
