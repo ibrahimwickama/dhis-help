@@ -121,7 +121,7 @@
   top: 0;
   display: block;
   /*left: 0;*/
-  background: #7386D5; /* Black*/
+  background: #276696; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -141,6 +141,11 @@
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover, .offcanvas a:focus{
   color: #f1f1f1;
+}
+
+/* When you mouse over the navigation links list, change their color */
+.sidenav ul:hover{
+  background-color: #4d80a8;
 }
 
 /* Position and style the close button (top right corner) */

@@ -16,7 +16,9 @@
 </div>
 
 
-
+<div *ngIf="showHelp" >
+  <app-get-help (newViewfromHomeApps)="receiveNavOption($event)" ></app-get-help>
+</div>
 
 <div *ngIf="showCustomApps">
   <app-home (newViewfromHomeApps)="receiveNavOption($event)"></app-home>

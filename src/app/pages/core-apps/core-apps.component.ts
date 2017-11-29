@@ -54,15 +54,15 @@ export class CoreAppsComponent implements OnInit {
     this.hideSideNav();
     if(option === 'core-apps'){
       this.newViewfromHomeApps.emit('core-apps') ;
-
-    }else if(option === 'maintenance-apps'){
+    } else if(option === 'dhis-help'){
+      this.newViewfromHomeApps.emit('dhis-help') ;
+    } else if(option === 'maintenance-apps'){
       this.newViewfromHomeApps.emit('maintenance-apps') ;
-    }else if(option === 'custom-apps'){
+    } else if(option === 'custom-apps'){
       this.newViewfromHomeApps.emit('custom-apps') ;
-    }else if(option === 'about'){
+    } else if(option === 'about'){
       this.newViewfromHomeApps.emit('about') ;
     }
-
   }
 
 

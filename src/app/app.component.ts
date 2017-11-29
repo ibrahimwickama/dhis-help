@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
   full:boolean = false;
   show:any;
   showHomeApps: boolean = false;
+  showHelp: boolean = false;
   showCoreApps: boolean = false;
   showCustomApps: boolean = true;
   showMaintenanceApps: boolean = false;
@@ -49,6 +50,7 @@ export class AppComponent implements OnInit{
       this.showAbout = false;
       this.showCustomApps = false;
       this.showMaintenanceApps = false;
+      this.showHelp = false;
       console.log('core-apps')
 
     }else if(option === 'maintenance-apps'){
@@ -57,6 +59,7 @@ export class AppComponent implements OnInit{
       this.showHomeApps = false;
       this.showAbout = false;
       this.showCustomApps = false;
+      this.showHelp = false;
       console.log('maintenance-apps')
 
     }else if(option === 'custom-apps'){
@@ -65,10 +68,21 @@ export class AppComponent implements OnInit{
       this.showHomeApps = false;
       this.showAbout = false;
       this.showMaintenanceApps = false;
+      this.showHelp = false;
       console.log('custom-apps')
 
     }else if(option === 'about'){
       this.showAbout = true;
+      this.showCoreApps = false;
+      this.showHomeApps = false;
+      this.showCustomApps = false;
+      this.showMaintenanceApps = false;
+      this.showHelp = false;
+      console.log('about')
+
+    }else if(option === 'dhis-help'){
+      this.showHelp = true;
+      this.showAbout = false;
       this.showCoreApps = false;
       this.showHomeApps = false;
       this.showCustomApps = false;
