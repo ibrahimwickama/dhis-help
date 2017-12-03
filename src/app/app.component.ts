@@ -19,8 +19,8 @@ export class AppComponent implements OnInit{
   show:any;
   showHomeApps: boolean = false;
   showHelp: boolean = false;
-  showCoreApps: boolean = false;
-  showCustomApps: boolean = true;
+  showCoreApps: boolean = true;
+  showCustomApps: boolean = false;
   showMaintenanceApps: boolean = false;
   showAbout: boolean = false;
 

@@ -13,6 +13,8 @@ export class CoreAppsComponent implements OnInit {
   property:any;
   margin:any;
   navMode:boolean = true;
+
+  sheetHeight:any;
   listOfApps:any =[];
   listOfAppsBackUp:any =[];
 
@@ -35,6 +37,16 @@ export class CoreAppsComponent implements OnInit {
     this.property = '0px';
     this.margin = '0px';
     this.navMode = true;
+  }
+
+
+  showBottomSheet(){
+    this.sheetHeight = '94%';
+  }
+
+
+  hideBottomSheet(){
+    this.sheetHeight = '0%';
   }
 
 

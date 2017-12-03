@@ -77,6 +77,10 @@
 
 }
 
+.in-use{
+  background-color: #4d80a8;
+}
+
 
 
 /*.my-button {*/
@@ -144,7 +148,7 @@
 }
 
 /* When you mouse over the navigation links list, change their color */
-.sidenav ul:hover{
+.sidenav a:hover{
   background-color: #4d80a8;
 }
 
@@ -171,59 +175,59 @@
 }
 
 
-
-
-
-
-
-
-
-/*
-    DEMO STYLE
-*/
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
-
-
-body {
-  font-family: 'Poppins', sans-serif;
-  background: #fafafa;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.7em;
-  color: #999;
-}
-
-a, a:hover, a:focus {
-  color: inherit;
-  text-decoration: none;
-  transition: all 0.3s;
-}
-
-.navbar {
-  padding: 15px 10px;
-  background: #fff;
-  border: none;
-  border-radius: 0;
-  margin-bottom: 40px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-.navbar-btn {
-  box-shadow: none;
-  outline: none !important;
-  border: none;
-}
-
-.line {
+#appear {
   width: 100%;
-  height: 1px;
-  border-bottom: 1px dashed #ddd;
-  margin: 40px 0;
+  height: 0px;
+  overflow: hidden;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  margin-top:33px;
+  z-index: 10;
+
 }
+
+.show:hover + #appear, #appear:hover {
+  margin-top:0;
+  height: 50%;
+  overflow: visible;
+
+}
+
+
+/*-------------------------------------------------------
+    TESTING BOTTOM SIDE NAV
+---------------------------------------------------------*/
+
+/* The side navigation menu */
+.down-sidenav {
+  width: 100%; /* 100% Full-height */
+  height: 0px; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  bottom: 0;
+  display: block;
+  /*left: 0;*/
+  background: white; /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  /*padding-top: 60px; !* Place content 60px from the top *!*/
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Position and style the close button (top right corner) */
+.down-sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+
+
+
+
 
 /* ---------------------------------------------------
     SIDEBAR STYLE

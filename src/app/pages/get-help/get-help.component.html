@@ -6,12 +6,14 @@
 <!--Side Navigation Bar-->
 <div id="mySidenav" class="sidenav" style="margin-top: 45px"  [ngStyle]="{width: property}">
   <a href="javascript:void(0)" class="closebtn" (click)="hideSideNav()" title="Close">&times;</a>
-  <ul><a href="#" (click)="optionFromSideNav('dhis-help')" style="padding: 0px">Dhis Help</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('core-apps')" style="padding: 0px" >Core Apps</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('maintenance-apps')" style="padding: 0px" >Maintenance Apps</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('custom-apps')" style="padding: 0px" >Custom Apps</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('about')" style="padding: 0px" >About</a></ul>
+  <!--<div class="option-list">-->
+  <a href="#" class="in-use" (click)="optionFromSideNav('dhis-help')" style="padding: 0px">Dhis Help</a>
+  <a href="#" (click)="optionFromSideNav('core-apps')" style="padding: 0px" >Core Apps</a>
+  <!--<ul><a href="#" (click)="optionFromSideNav('maintenance-apps')" style="padding: 0px" >Maintenance Apps</a></ul>-->
+  <a href="#" (click)="optionFromSideNav('custom-apps')" style="padding: 0px" >Custom Apps</a>
+  <a href="#" (click)="optionFromSideNav('about')" style="padding: 0px" >About</a>
   <!--<a href="#" (click)="fullIt()">About</a>-->
+  <!--</div>-->
 </div>
 
 

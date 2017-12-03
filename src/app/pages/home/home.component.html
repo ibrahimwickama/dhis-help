@@ -6,11 +6,12 @@
 <!--Side Navigation Bar-->
 <div id="mySidenav" class="sidenav" style="margin-top: 45px"  [ngStyle]="{width: property}">
   <a href="javascript:void(0)" class="closebtn" (click)="hideSideNav()" title="Close">&times;</a>
-  <ul><a href="#" (click)="optionFromSideNav('dhis-help')" style="padding: 0px">Dhis Help</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('core-apps')" style="padding: 0px" >Core Apps</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('maintenance-apps')" style="padding: 0px" >Maintenance Apps</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('custom-apps')" style="padding: 0px" >Custom Apps</a></ul>
-  <ul><a href="#" (click)="optionFromSideNav('about')" style="padding: 0px" >About</a></ul>
+
+  <a href="#" (click)="optionFromSideNav('dhis-help')" style="padding: 0px">Dhis Help</a>
+  <a href="#" (click)="optionFromSideNav('core-apps')" style="padding: 0px" >Core Apps</a>
+  <!--<ul><a href="#" (click)="optionFromSideNav('maintenance-apps')" style="padding: 0px" >Maintenance Apps</a></ul>-->
+  <a href="#" class="in-use" (click)="optionFromSideNav('custom-apps')" style="padding: 0px" >Custom Apps</a>
+  <a href="#" (click)="optionFromSideNav('about')" style="padding: 0px" >About</a>
   <!--<a href="#" (click)="fullIt()">About</a>-->
 </div>
 
@@ -26,18 +27,6 @@
     <!--<app-side-nav></app-side-nav>-->
     <input type="text" name="search" class="form-control col-4" style="margin-left: 30% " placeholder="Search" (input)="getFilteredList($event)">
   </div>
-
-  <!--<div style="margin-top: 50px">-->
-  <!--<app-charts></app-charts>-->
-  <!--</div>-->
-
-
-
-  <!--<div *ngIf="full" class=" fullscreen ">-->
-    <!--<app-home></app-home>-->
-  <!--</div>-->
-
-
 
   <div class="my-card-bundles">
     <div class="row">
@@ -67,8 +56,8 @@
             <div class="my-card-label">
               {{app.name}}
             </div>
-          </div>
 
+          </div>
 
 
         </div>

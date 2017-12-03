@@ -77,6 +77,10 @@
 }
 
 
+.in-use{
+  background-color: #4d80a8;
+}
+
 
 /*.my-button {*/
 /*background: none;*/
@@ -143,7 +147,7 @@
 }
 
 /* When you mouse over the navigation links list, change their color */
-.sidenav ul:hover{
+.sidenav a:hover{
   background-color: #4d80a8;
 }
 
