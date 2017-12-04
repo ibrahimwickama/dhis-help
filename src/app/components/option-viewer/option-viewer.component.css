@@ -9,6 +9,11 @@
   height: 100%;
 }
 
+.more-set{
+  max-height: 600px;
+  overflow: auto;
+}
+
 
 /* Option list Content (Hidden by Default) */
 .option-list {

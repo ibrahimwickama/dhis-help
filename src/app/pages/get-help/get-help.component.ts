@@ -13,6 +13,8 @@ export class GetHelpComponent implements OnInit {
   property:any;
   margin:any;
   navMode:boolean = true;
+  sheetHeight:any;
+  selectedOption:any;
   listOfApps:any =[];
   listOfAppsBackUp:any =[];
 
@@ -38,6 +40,20 @@ export class GetHelpComponent implements OnInit {
     this.property = '0px';
     this.margin = '0px';
     this.navMode = true;
+  }
+
+  showBottomSheet(selected){
+    this.sheetHeight = '94%';
+    this.selectedOption = selected;
+  }
+
+
+  hideBottomSheet(){
+    this.sheetHeight = '0%';
+  }
+
+  feedOptionViewSettings(){
+
   }
 
 

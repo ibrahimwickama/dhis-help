@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-option-viewer',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./option-viewer.component.css']
 })
 export class OptionViewerComponent implements OnInit {
+
+  @Input() selected;
 
   constructor() { }
 

@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <div class="row">
-  <div class=" col-2 help-subs">
+  <div class=" col-2 help-subs" >
 
         <!--imported selected card from help-->
     <div class="card myown-card" >
@@ -23,18 +23,20 @@
         </div>
       </div>
       <div class="my-card-label">
-        Sample
+        {{selected.name}}
       </div>
     </div>
 
     <div>Options</div>
 
     <div class="card">
-      <div class="option-list">
-        <a href="#">kfldk</a>
-        <a href="#">kfldk</a>
-        <a href="#">kfldk</a>
-        <a href="#">kfldk</a>
+      <div class="more-set">
+      <div class="option-list" *ngFor="let option of selected.options">
+        <a href="#">{{option}}</a>
+        <!--<a href="#">kfldk</a>-->
+        <!--<a href="#">kfldk</a>-->
+        <!--<a href="#">kfldk</a>-->
+      </div>
       </div>
     </div>
   </div>

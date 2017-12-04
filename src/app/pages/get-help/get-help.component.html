@@ -16,6 +16,12 @@
   <!--</div>-->
 </div>
 
+<!--Side Navigation Bar-->
+<div id="down-sidenav" class="down-sidenav" style="margin-top: 45px"  [ngStyle]="{height: sheetHeight}">
+  <a href="javascript:void(0)" class="closebtn" (click)="hideBottomSheet()" title="Close">&times;</a>
+  <app-option-viewer [selected]="selectedOption"  ></app-option-viewer>
+</div>
+
 
 
 
@@ -62,7 +68,7 @@
                   <button  class="btn btn-outline-primary my-button"
                            style="margin-top: 40%">use App</button></a>
                 <button  class="btn btn-outline-primary my-button"
-                         style="margin-top: 40%" routerLink="iArchive" >get Help</button>
+                         style="margin-top: 40%" (click)="showBottomSheet(app)" >get Help</button>
 
               </div>
             </div>
