@@ -16,7 +16,7 @@ export class DhisHelpService {
           'System general settings',
           'System appearance settings',
           'System email settings'],
-        key: "Setting-dhis"
+        key: "setting-dhis"
       },
 
       {
@@ -67,7 +67,7 @@ export class DhisHelpService {
         name: "About DHIS 2",
         description: "Learn the story behind DHIS",
         options:['Background of DHIS 2'],
-        key: "organisation-unit"
+        key: "about-dhis"
       },
 
       {
@@ -196,7 +196,7 @@ export class DhisHelpService {
           'Data element categories',
           'Data element category combinations',
           'Translations'],
-        key: "data-administration"
+        key: "data-elements"
       },
 
     ];

@@ -15,9 +15,7 @@
           <div style="color: white">
 
           </div>
-          <a href="#">
-            <button  class="btn btn-outline-primary my-button"
-                     style="margin-top: 40%">use App</button></a>
+
 
 
         </div>
@@ -33,15 +31,18 @@
       <div class="more-set">
       <div class="option-list" *ngFor="let option of selected.options">
         <a href="#">{{option}}</a>
-        <!--<a href="#">kfldk</a>-->
-        <!--<a href="#">kfldk</a>-->
-        <!--<a href="#">kfldk</a>-->
+
       </div>
       </div>
     </div>
   </div>
   <div class=" col-10 help-main">
-    <div class="card">jhfkjshjhdsj</div>
+    <div class="card">
+
+      <app-settings></app-settings>
+      {{selected.key}}
+
+    </div>
   </div>
   </div>
 </div>

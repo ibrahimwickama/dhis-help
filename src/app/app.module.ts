@@ -22,6 +22,7 @@ import { SideNavComponent } from './components/side-nav/side-nav.component';
 import {DhisHelpService} from "./services/dhis-help.service";
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { OptionViewerComponent } from './components/option-viewer/option-viewer.component';
+import { SettingsComponent } from './helpComponents/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { OptionViewerComponent } from './components/option-viewer/option-viewer.
     CoreAppsComponent,
     SideNavComponent,
     GetHelpComponent,
-    OptionViewerComponent
+    OptionViewerComponent,
+    SettingsComponent
   ],
   imports: [
     BrowserModule, MenuModule
