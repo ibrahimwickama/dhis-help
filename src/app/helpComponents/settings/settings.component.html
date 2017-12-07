@@ -1,170 +1,172 @@
-<div >
-  <h3>User general settings</h3>
-  <ul>
+<div class="container-fluid">
+  <div *ngIf="selection === 'User general settings'" >
+    <h3>User general settings</h3>
+    <ul>
+          <li>
+              <p>Interface language: Sets the locale / language of the user interface,
+                such as labels, menus and headers. You can currently select between 18 languages.</p>
+          </li>
+          <li>
+              <p>Database language: Sets the locale / language of the database contents in the system,
+                such as the list of data elements and reports.</p>
+          </li>
+          <li>
+              <p>Sort order property: Sets the property for which to base the sorting of the element lists in the system,
+                such as the list of data elements and indicators. Available properties are name, short name,
+                alternative name and code. For instance, if you set the sort order property to short name,
+                all lists will be sorted based on the short name property.
+                You can also do manual sorting of all lists by going to the desired list and click "sort" and perform the sorting.
+                This sorting can then be enabled by selecting custom as the sort order property.</p>
+          </li>
+          <li>
+              <p>Display property: Sets the property which will be displayed in the element lists in the system, such as the list of data sets.</p>
+          </li>
+          <li>
+              <p>Style: Sets the style / look-and-feel of the system.
+                You can choose among four different styles while the light blue style is the default and recommended style.
+                The user setting overrides the corresponding style system setting.</p>
+          </li>
+          <li>
+              <p>Dashboard charts to display: Sets the numer of charts to display on the front page of the dashboard module.
+                For small screens, four charts are recommended while eight charts are recommended for widescreens.</p>
+          </li>
+    </ul>
+  </div>
+
+
+
+  <div *ngIf="selection === 'User message settings'" >
+    <h3>User message settings</h3>
+    <ul>
         <li>
-            <p>Interface language: Sets the locale / language of the user interface,
-              such as labels, menus and headers. You can currently select between 18 languages.</p>
-        </li>
-        <li>
-            <p>Database language: Sets the locale / language of the database contents in the system,
-              such as the list of data elements and reports.</p>
-        </li>
-        <li>
-            <p>Sort order property: Sets the property for which to base the sorting of the element lists in the system,
-              such as the list of data elements and indicators. Available properties are name, short name,
-              alternative name and code. For instance, if you set the sort order property to short name,
-              all lists will be sorted based on the short name property.
-              You can also do manual sorting of all lists by going to the desired list and click "sort" and perform the sorting.
-              This sorting can then be enabled by selecting custom as the sort order property.</p>
-        </li>
-        <li>
-            <p>Display property: Sets the property which will be displayed in the element lists in the system, such as the list of data sets.</p>
-        </li>
-        <li>
-            <p>Style: Sets the style / look-and-feel of the system.
-              You can choose among four different styles while the light blue style is the default and recommended style.
-              The user setting overrides the corresponding style system setting.</p>
-        </li>
-        <li>
-            <p>Dashboard charts to display: Sets the numer of charts to display on the front page of the dashboard module.
-              For small screens, four charts are recommended while eight charts are recommended for widescreens.</p>
+            <p>Message email notification: Decides whether you want to receive email notifications.
+              Currently the system offers email notifications of messages received in the dashboard.
+              This requires that you have entered your email address in your personal
+              account details - you can access it under "Help" - "User account".</p>
         </li>
   </ul>
-</div>
+  </div>
 
 
 
-<div >
-  <h3>User message settings</h3>
-  <ul>
+  <div *ngIf="selection === 'System general settings'" >
+    <h3>System general settings</h3>
+
+    <ul>
+
+        <li>
+          <p>Aggregation strategy: This setting defines how the system generates and provides aggregated data to the output tools.
+            There are two options available: Batch means that all output tools like reports, charts and maps will read aggregate
+            data from pre-built data mart tables in the database. This strategy provides the best performance and inflicts less load on
+            the application since data retrieval only implies reading from one or a few database tables using a simple query.</p>
+          <p>This strategy requries that those data mart tables are populated with the relevant data before the reports are requested.
+            This can preferrably be done using nightly scheduled jobs or manually through the data mart user interface.
+            A potential downside is that users will have to wait to the next day to view their reports after doing data entry.
+            This approach is the recommended for large online deployments where there are medium to high user concurrency.</p>
+          <p>Real-time means that aggregated data is generated and retrieved on-the-fly every time a report is requested.
+            This implies that there is no delay after doing data entry before the data is accessible in reports.
+            Performance will not scale adequately and hence this strategy is suitable for small, typically offline, deployments.</p>
+        </li>
+
+        <li>
+          <p>Infrastructural data elements: This setting defines a data element group where the member data
+            elements should describe data about the infrastructure of organisation units.
+            Examples of such infrastructural data elements could be population, doctors, beds, internet connectivity and climate.
+            This infrastructural data can currently be viewed in the GIS module in the facility information sheet.</p>
+        </li>
+
+        <li>
+          <p>Infrastructural period type: Sets the frequency for which the data elements in the infrastructural
+            data elements group are captured. This will typically be yearly. When viewing the infrastructual data you
+            will be able to select the time period of the data source.</p>
+        </li>
+
+        <li>
+          <p>Feedback recipients: This setting defines a user group where the members
+            will recieve all messages being sent through the function for writing feedback
+            in the dashboard module. This will typically be members of the super user team who are ablet to support
+            and answer questions coming from end-users.</p>
+        </li>
+
+        <li>
+          <p>Completeness notification recipients: This setting defines a user group where the members will receive
+            messages as notifications when a form has been marked as complete. A typical use of this is when the
+            forms are considered to be an order of some commodity and a group of users want to be notified
+            when such orders are placed.</p>
+        </li>
+
+        <li>
+          <p>Omit indicator values with zero numerator value in data mart: Defines
+            whether aggregated indicator values with zero as the numerator value
+            should be written to the indicator data mart table. Having such values written
+            is required for instance when connecting Excel pivot tables to the data mart as Excel
+            will need the numerator data to correctly aggregate up in the organisation unit hierarchy.
+            If third-party tools like Excel are not used with the application this will reduce the total number of
+            values written to the data mart (which again will improve performance) and could safely be set to omit.</p>
+        </li>
+
+        <li>
+          <p>Disable data entry when data set completed: This setting defines whether
+            the data entry forms should be disabled and prevent from futher entry after they have been marked as complete.</p>
+        </li>
+
+        <li>
+          <p>Data analysis std dev factor: Sets the number of standard deviations for use
+            in the outlier analysis performed on the captured data in the data entry module.
+            The default value is 2; a high value will catch less outlier values than a low value.</p>
+        </li>
+
+        <li>
+          <p>Days after period end to qualify for timely data submission: Sets the number of days
+            after the end of a period in which a data entry form must be marked as complete in order to be
+            considered timely. This affects the "reporting rate" tool in the reporting module which lists forms
+            marked as complete as well as marked as complete in time. The default value is 15.</p>
+        </li>
+
+        <li>
+          <p>Server base URL: The full, externally accessible base URL for this server. Example:
+            https://apps.dhis2.org/demo is the server base URL for the DHIS 2 demo server. The URL is used to provide
+            links to this server from external locations such as in emails sent from the system.</p>
+        </li>
+
+    </ul>
+  </div>
+
+
+
+  <div *ngIf="selection === 'System appearance settings'" >
+    <h3>System appearance settings</h3>
+    <ul>
       <li>
-          <p>Message email notification: Decides whether you want to receive email notifications.
-            Currently the system offers email notifications of messages received in the dashboard.
-            This requires that you have entered your email address in your personal
-            account details - you can access it under "Help" - "User account".</p>
+        <p>Application title: Sets the application title to the left on the top menu.</p>
       </li>
-</ul>
-</div>
-
-
-
-<div>
-  <h3>System general settings</h3>
-
-  <ul>
-
       <li>
-        <p>Aggregation strategy: This setting defines how the system generates and provides aggregated data to the output tools.
-          There are two options available: Batch means that all output tools like reports, charts and maps will read aggregate
-          data from pre-built data mart tables in the database. This strategy provides the best performance and inflicts less load on
-          the application since data retrieval only implies reading from one or a few database tables using a simple query.</p>
-        <p>This strategy requries that those data mart tables are populated with the relevant data before the reports are requested.
-          This can preferrably be done using nightly scheduled jobs or manually through the data mart user interface.
-          A potential downside is that users will have to wait to the next day to view their reports after doing data entry.
-          This approach is the recommended for large online deployments where there are medium to high user concurrency.</p>
-        <p>Real-time means that aggregated data is generated and retrieved on-the-fly every time a report is requested.
-          This implies that there is no delay after doing data entry before the data is accessible in reports.
-          Performance will not scale adequately and hence this strategy is suitable for small, typically offline, deployments.</p>
+        <p>Style: Sets the style / look-and-feel of the system. The corresponding user style setting overrides this.</p>
       </li>
-
       <li>
-        <p>Infrastructural data elements: This setting defines a data element group where the member data
-          elements should describe data about the infrastructure of organisation units.
-          Examples of such infrastructural data elements could be population, doctors, beds, internet connectivity and climate.
-          This infrastructural data can currently be viewed in the GIS module in the facility information sheet.</p>
+        <p>Flag: Sets the flag which is displayed in the left menu of the dashboard module.</p>
       </li>
-
       <li>
-        <p>Infrastructural period type: Sets the frequency for which the data elements in the infrastructural
-          data elements group are captured. This will typically be yearly. When viewing the infrastructual data you
-          will be able to select the time period of the data source.</p>
+        <p>Start page: Sets page / module which the user will be redirected to after logging in.
+          The dashboard module is the recommended start module.</p>
       </li>
+    </ul>
+  </div>
 
+
+  <div *ngIf="selection === 'System email settings'" >
+    <h3>System email settings</h3>
+
+    <ul>
       <li>
-        <p>Feedback recipients: This setting defines a user group where the members
-          will recieve all messages being sent through the function for writing feedback
-          in the dashboard module. This will typically be members of the super user team who are ablet to support
-          and answer questions coming from end-users.</p>
+        <p>Host name: Refers to the host name of the SMTP server. For instance when using Google SMTP services this should be smtp.gmail.com.</p>
       </li>
-
       <li>
-        <p>Completeness notification recipients: This setting defines a user group where the members will receive
-          messages as notifications when a form has been marked as complete. A typical use of this is when the
-          forms are considered to be an order of some commodity and a group of users want to be notified
-          when such orders are placed.</p>
+        <p>User name: The user name of the user account with the SMTP server. For instance mail@dhis2.org.</p>
       </li>
-
       <li>
-        <p>Omit indicator values with zero numerator value in data mart: Defines
-          whether aggregated indicator values with zero as the numerator value
-          should be written to the indicator data mart table. Having such values written
-          is required for instance when connecting Excel pivot tables to the data mart as Excel
-          will need the numerator data to correctly aggregate up in the organisation unit hierarchy.
-          If third-party tools like Excel are not used with the application this will reduce the total number of
-          values written to the data mart (which again will improve performance) and could safely be set to omit.</p>
+        <p>Password: The password of the user account with the SMTP server.</p>
       </li>
-
-      <li>
-        <p>Disable data entry when data set completed: This setting defines whether
-          the data entry forms should be disabled and prevent from futher entry after they have been marked as complete.</p>
-      </li>
-
-      <li>
-        <p>Data analysis std dev factor: Sets the number of standard deviations for use
-          in the outlier analysis performed on the captured data in the data entry module.
-          The default value is 2; a high value will catch less outlier values than a low value.</p>
-      </li>
-
-      <li>
-        <p>Days after period end to qualify for timely data submission: Sets the number of days
-          after the end of a period in which a data entry form must be marked as complete in order to be
-          considered timely. This affects the "reporting rate" tool in the reporting module which lists forms
-          marked as complete as well as marked as complete in time. The default value is 15.</p>
-      </li>
-
-      <li>
-        <p>Server base URL: The full, externally accessible base URL for this server. Example:
-          https://apps.dhis2.org/demo is the server base URL for the DHIS 2 demo server. The URL is used to provide
-          links to this server from external locations such as in emails sent from the system.</p>
-      </li>
-
-  </ul>
-</div>
-
-
-
-<div>
-  <h3>System appearance settings</h3>
-  <ul>
-    <li>
-      <p>Application title: Sets the application title to the left on the top menu.</p>
-    </li>
-    <li>
-      <p>Style: Sets the style / look-and-feel of the system. The corresponding user style setting overrides this.</p>
-    </li>
-    <li>
-      <p>Flag: Sets the flag which is displayed in the left menu of the dashboard module.</p>
-    </li>
-    <li>
-      <p>Start page: Sets page / module which the user will be redirected to after logging in.
-        The dashboard module is the recommended start module.</p>
-    </li>
-  </ul>
-</div>
-
-
-<div>
-  <h3>System email settings</h3>
-
-  <ul>
-    <li>
-      <p>Host name: Refers to the host name of the SMTP server. For instance when using Google SMTP services this should be smtp.gmail.com.</p>
-    </li>
-    <li>
-      <p>User name: The user name of the user account with the SMTP server. For instance mail@dhis2.org.</p>
-    </li>
-    <li>
-      <p>Password: The password of the user account with the SMTP server.</p>
-    </li>
-  </ul>
+    </ul>
+  </div>
 </div>

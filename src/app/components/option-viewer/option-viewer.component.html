@@ -30,7 +30,7 @@
     <div class="card">
       <div class="more-set">
       <div class="option-list" *ngFor="let option of selected.options">
-        <a href="#">{{option}}</a>
+        <a href="#" (click)="settingOption(option)">{{option}}</a>
 
       </div>
       </div>
@@ -40,8 +40,8 @@
     <div class="card">
 
       <div *ngIf="selected.key === 'setting-dhis'" >
-        <app-settings></app-settings>
-        {{selected.key}}
+        <app-settings [selection]="selectedOption"></app-settings>
+        <!--{{selected.key}}-->
       </div>
 
       <div *ngIf="selected.key === 'data-quality-functionality'" >

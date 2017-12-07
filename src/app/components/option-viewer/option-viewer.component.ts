@@ -9,9 +9,15 @@ export class OptionViewerComponent implements OnInit {
 
   @Input() selected;
 
+  selectedOption:any;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  settingOption(option){
+    this.selectedOption = option;
   }
 
 
