@@ -42,8 +42,7 @@ export class DhisHelpService {
         description: "Datasets and Data entry forms guide gives you more details on Datasets on various forms in data entry",
         options:['Datasets',
           'Dataset management',
-          'Adding a new section form',
-          'Custom Forms',
+          'Adding a new section form custom Forms',
           'Data set assignment editor'],
         key: "datasets-forms"
       },

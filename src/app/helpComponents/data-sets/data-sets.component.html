@@ -1,3 +1,169 @@
-<p>
-  data-sets works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Datasets'" >
+    <h3>Datasets</h3>
+    <p>All data entry in DHIS2 is organised through the use of datasets. You can add and edit datasets in
+      Maintenance-&gt;Datasets. A dataset is a collection of data elements grouped together for data collection and data
+      export between instances of DHIS2 (e.g. from a district office local installation to a national server). .</p>
+    <p>A dataset also has a frequency which controls the data collection frequency, which can be daily, weekly, monthly,
+      quarterly, six-monthly, or yearly. Both which data elements to include in the dataset and the frequency is set in the
+      Add/Edit Dataset window, together with a name, short name, and code. In order to use a dataset to collect data for
+      a specific orgunit you must assign the orgunit to the dataset, and this mechanism controls which orgunits that can use which datasets. </p>
+    <p>Datasets also are assigned to specific organisation units which will be allowed to enter data for all data elements
+      in a given dataset. You can assign orgunits to a dataset in the Dataset Management (list of available datasets are shown)
+      by clicking on the blue folder icon, the first icon under Operations, corresponding to the dataset you would like to modify.
+      Alternatively you can manage orgunit assignments for all datasets together in the Dataset Assignment Editor
+      (available in the right-side menu for Datasets). </p>
+    <p>Your dataset will then be ready to be used in Services-&gt;Data Entry for the orgunits that you have
+      assigned and for periods according to your selected frequency (period type).</p>
+
+    <h3>Dataset management</h3>
+    <p>The dataset management function allows you to create new datasets and manage existing ones.
+      The dialog can be reached by choosing Maintenance-&gt;Datasets-&gt;Dataset. A sample dialog is displayed below.</p>
+
+    <ul>
+      <p>Each of the functions is described below.</p>
+      <li>
+        <p>Sort: This controls the custom sort order. Depending on the systems settings, users will see
+          the datasets ordered in the specific order which you provide. </p>
+      </li>
+      <li>
+        <p>Add new: Adds a new dataset. When pressing this button, you can create a new dataset.
+          You need to provide a name, shortname and frequency. The "Code" attribute is optional. Data elements can
+          be added to the "Selected data element" list by selecting them individually. and pressing the  button.
+          Indicators can also be added to data sets and will be available to be placed in custom data entry forms when they
+          need to be shown along with data elements on the same data entry form. Press "Save" to add the new dataset. </p>
+      </li>
+      <li>
+        <p> Assign organisation units to datasets: This function will allow you to
+          assign individual organisational units to a dataset. Only organisational units which have been assigned
+          to a dataset will be allowed to enter data into the dataset. </p>
+      </li>
+      <li>
+        <p> Edit dataset: This will allow you to edit existing datasets, for instance when you need to
+          add or remove data elements and indicators to a given dataset.</p>
+      </li>
+      <li>
+        <p> Translate: Allows you to translate the name of a dataset to a different language.</p>
+      </li>
+      <li>
+        <p> Create or edit a custom data entry form. Refer to  for detailed information of how to use this function. </p>
+      </li>
+      <li>
+        <p> Edit compulsory data elements: This dialog will allow you to add or remove data elements which will
+          be marked as compulsory during data entry. </p>
+      </li>
+      <li>
+        <p> Delete: Completely removes a dataset from the system. </p>
+      </li>
+      <li>
+        <p> Information: Display some informative information about the dataset, including the number of data elements,
+          the frequency, and which data entry form has been assigned to the dataset.</p>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <div *ngIf="selection === 'Dataset management'" >
+    <h3>Dataset management</h3>
+    <p>The dataset management function allows you to create new datasets and manage existing ones.
+      The dialog can be reached by choosing Maintenance-&gt;Datasets-&gt;Dataset. A sample dialog is displayed below.</p>
+
+    <ul>
+      <p>Each of the functions is described below.</p>
+      <li>
+        <p>Sort: This controls the custom sort order. Depending on the systems settings, users will see the datasets ordered
+          in the specific order which you provide. </p>
+      </li>
+      <li>
+        <p>Add new: Adds a new dataset. When pressing this button, you can create a new dataset.
+          You need to provide a name, shortname and frequency. The "Code" attribute is optional. Data elements can
+          be added to the "Selected data element" list by selecting them individually. and pressing the  button.
+          Indicators can also be added to data sets and will be available to be placed in custom data entry forms when they
+          need to be shown along with data elements on the same data entry form. Press "Save" to add the new dataset. </p>
+      </li>
+      <li>
+        <p> Assign organisation units to datasets: This function will allow you to assign individual organisational units
+          to a dataset. Only organisational units which have been assigned to a dataset will be allowed to enter data into the dataset. </p>
+      </li>
+      <li>
+        <p> Edit dataset: This will allow you to edit existing datasets, for instance when you need to add
+          or remove data elements and indicators to a given dataset.</p>
+      </li>
+      <li>
+        <p> Translate: Allows you to translate the name of a dataset to a different language.</p>
+      </li>
+      <li>
+        <p> Create or edit a custom data entry form. Refer to  for detailed information of how to use this function. </p>
+      </li>
+      <li>
+        <p> Edit compulsory data elements: This dialog will allow you to add or remove data
+          elements which will be marked as compulsory during data entry. </p>
+      </li>
+      <li>
+        <p> Delete: Completely removes a dataset from the system. </p>
+      </li>
+      <li>
+        <p> Information: Display some informative information about the dataset, including the
+          number of data elements, the frequency, and which data entry form has been assigned to the dataset.</p>
+      </li>
+    </ul>
+  </div>
+
+
+
+
+  <div *ngIf="selection === 'Adding a new section form custom Forms'" >
+    <h3>Adding a new section form</h3>
+    <p>Section forms are separated automatically by data element category combinations, which produce a spreadsheet
+      like data entry form for each section. </p>
+    <p>When designing a section form the procedure is as follows:</p>
+
+    <ol>
+      <li>
+        <p> Set up your dataset as described in </p>
+      </li>
+      <li>
+        <p>Open the DataSet Section window (from right side menu under Datasets) and add your sections
+          one by one. To add a new section to a section form, first choose the dataset from the "Select dataset" combo box.
+          Then choose the specific category combo and press "Add new". You can now add data elements from the "Available data
+          element" list on the left to the "Selected data elements" list on the right. Data elements can be sorted within the section
+          with the use of the "Move up"  and "Move down"  buttons. Be sure to press "Save" once you have finished.
+          You can only use one data element category combination per section.</p>
+      </li>
+      <li>
+        <p> You may need to control how the data element sections are displayed on the final form.
+          In Dataset Section management, select the dataset from the "Dataset" drop-down box, then leave [All]
+          in the "Select Category Combo" drop-down. Click on "Sort section" to sort the order of appearance of your
+          sections in the data entry form.</p>
+      </li>
+      <li>
+        <p>In Data Entry you can now start using the Section form (should appear automatically when sections are available for the selected dataset).
+          Datasets which have section forms will automatically display the section form.</p>
+      </li>
+      <li>
+        <p>Certain data elements may need to be disabled for data entry.
+          Clicking on the  "Section grey field management" icon will allow you to disable specific data element category
+          options as seen below. Pressing the "Disable" button will prevent data from being entered into this specific data
+          element/category option during data entry. Be sure to press "Done" to save your changes.</p>
+      </li>
+    </ol>
+    <p>A sample section form is displayed in the next figure. Notice how each data
+      element category has been separated into a separate section, and a data entry table has been
+      automatically generated by the system. Use of section forms in combination with data element categories can
+      drastically reduce the amount of time which is required to create data entry forms for datasets.</p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Data set assignment editor'" >
+    <h3>Data set assignment editor</h3>
+    <p>The data set assignment editor is a tool for adding and removing many data sets to organisation units
+      in batch style. Start by selecting an organisation unit from the selection tree. In the area below the tree a grid
+      will be displayed showing all data sets as columns and the child organisation units as rows.</p>
+    <p>From the grid you can now assign or unassign data sets simply by clicking on of the corresponding
+      icons in the grid. If you want to assign or unassign an organisation unit to all data sets you can check or uncheck the
+      checkbox next to the organisation unit. Your changes will automatically be saved.</p>
+  </div>
+</div>

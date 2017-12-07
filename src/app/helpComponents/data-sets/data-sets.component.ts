@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-data-sets',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-sets.component.css']
 })
 export class DataSetsComponent implements OnInit {
+
+  @Input() selection;
 
   constructor() { }
 
