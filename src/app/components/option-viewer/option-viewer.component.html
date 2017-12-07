@@ -30,7 +30,8 @@
     <div class="card">
       <div class="more-set">
       <div class="option-list" *ngFor="let option of selected.options">
-        <a href="#" (click)="settingOption(option)">{{option}}</a>
+        <a href="#" (click)="settingOption(option)"
+           [ngStyle]="{'background-color': selectedOption == option ?'#f1f1f1':''}">{{option}}</a>
 
       </div>
       </div>
