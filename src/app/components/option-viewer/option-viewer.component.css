@@ -1,6 +1,7 @@
 .help-main{
   width: 100%;
   height: 100%;
+  /*overflow: auto;*/
 
 }
 
@@ -35,10 +36,6 @@
 
 /* Change color of Option list links on hover */
 .option-list a:hover {
-  background-color: #f1f1f1
-}
-
-.list-option-active{
   background-color: #f1f1f1
 }
 

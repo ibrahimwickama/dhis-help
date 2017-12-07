@@ -46,11 +46,11 @@
       </div>
 
       <div *ngIf="selected.key === 'data-quality-functionality'" >
-        <app-data-quality></app-data-quality>
+        <app-data-quality [selection]="selectedOption" ></app-data-quality>
       </div>
 
       <div *ngIf="selected.key === 'import-export'" >
-        <app-import-export></app-import-export>
+        <app-import-export [selection]="selectedOption" ></app-import-export>
       </div>
 
       <div *ngIf="selected.key === 'datasets-forms'" >

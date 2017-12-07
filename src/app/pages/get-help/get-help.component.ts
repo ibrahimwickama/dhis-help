@@ -43,7 +43,7 @@ export class GetHelpComponent implements OnInit {
   }
 
   showBottomSheet(selected){
-    this.sheetHeight = '94%';
+    this.sheetHeight = '95.5%';
     this.selectedOption = selected;
 
   }

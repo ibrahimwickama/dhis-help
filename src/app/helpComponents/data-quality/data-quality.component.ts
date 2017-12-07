@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-data-quality',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./data-quality.component.css']
 })
 export class DataQualityComponent implements OnInit {
+
+  @Input() selection;
 
   constructor() { }
 
