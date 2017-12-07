@@ -23,6 +23,18 @@ import {DhisHelpService} from "./services/dhis-help.service";
 import { GetHelpComponent } from './pages/get-help/get-help.component';
 import { OptionViewerComponent } from './components/option-viewer/option-viewer.component';
 import { SettingsComponent } from './helpComponents/settings/settings.component';
+import { OrgUnitsComponent } from './helpComponents/org-units/org-units.component';
+import { DataQualityComponent } from './helpComponents/data-quality/data-quality.component';
+import { DataSetsComponent } from './helpComponents/data-sets/data-sets.component';
+import { AboutDhisComponent } from './helpComponents/about-dhis/about-dhis.component';
+import { StartingDhisComponent } from './helpComponents/starting-dhis/starting-dhis.component';
+import { IndicatorsComponent } from './helpComponents/indicators/indicators.component';
+import { UserManagementComponent } from './helpComponents/user-management/user-management.component';
+import { UsingGisComponent } from './helpComponents/using-gis/using-gis.component';
+import { ReportsModuleComponent } from './helpComponents/reports-module/reports-module.component';
+import { DataAdministrationComponent } from './helpComponents/data-administration/data-administration.component';
+import { DataElementsComponent } from './helpComponents/data-elements/data-elements.component';
+import { ImportExportComponent } from './helpComponents/import-export/import-export.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +53,19 @@ import { SettingsComponent } from './helpComponents/settings/settings.component'
     SideNavComponent,
     GetHelpComponent,
     OptionViewerComponent,
-    SettingsComponent
+    SettingsComponent,
+    OrgUnitsComponent,
+    DataQualityComponent,
+    DataSetsComponent,
+    AboutDhisComponent,
+    StartingDhisComponent,
+    IndicatorsComponent,
+    UserManagementComponent,
+    UsingGisComponent,
+    ReportsModuleComponent,
+    DataAdministrationComponent,
+    DataElementsComponent,
+    ImportExportComponent
   ],
   imports: [
     BrowserModule, MenuModule

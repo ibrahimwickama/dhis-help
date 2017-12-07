@@ -39,8 +39,70 @@
   <div class=" col-10 help-main">
     <div class="card">
 
-      <app-settings></app-settings>
-      {{selected.key}}
+      <div *ngIf="selected.key === 'setting-dhis'" >
+        <app-settings></app-settings>
+        {{selected.key}}
+      </div>
+
+      <div *ngIf="selected.key === 'data-quality-functionality'" >
+        <app-data-quality></app-data-quality>
+      </div>
+
+      <div *ngIf="selected.key === 'import-export'" >
+        <app-import-export></app-import-export>
+      </div>
+
+      <div *ngIf="selected.key === 'datasets-forms'" >
+        <app-data-sets></app-data-sets>
+      </div>
+
+      <div *ngIf="selected.key === 'organisation-unit'" >
+       <app-org-units></app-org-units>
+      </div>
+
+      <div *ngIf="selected.key === 'about-dhis'" >
+        <app-about-dhis></app-about-dhis>
+      </div>
+
+      <div *ngIf="selected.key === 'starting-dhis'" >
+        <app-starting-dhis></app-starting-dhis>
+      </div>
+
+      <div *ngIf="selected.key === 'indicators'" >
+        <app-indicators></app-indicators>
+      </div>
+
+      <div *ngIf="selected.key === 'user-management'" >
+        <app-user-management></app-user-management>
+      </div>
+
+      <div *ngIf="selected.key === 'data-visualizer'" >
+        <app-data-visualizer></app-data-visualizer>
+      </div>
+
+      <div *ngIf="selected.key === 'using-gis'" >
+        <app-using-gis></app-using-gis>
+      </div>
+
+      <div *ngIf="selected.key === 'reports-module'" >
+        <app-reports-module></app-reports-module>
+      </div>
+
+      <div *ngIf="selected.key === 'data-entry'" >
+       <app-data-entry></app-data-entry>
+      </div>
+
+      <div *ngIf="selected.key === 'data-administration'" >
+        <app-data-administration></app-data-administration>
+      </div>
+
+      <div *ngIf="selected.key === 'data-elements'" >
+        <app-data-elements></app-data-elements>
+      </div>
+
+
+
+
 
     </div>
   </div>
