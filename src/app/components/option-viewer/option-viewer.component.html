@@ -58,7 +58,7 @@
       </div>
 
       <div *ngIf="selected.key === 'organisation-unit'" >
-       <app-org-units></app-org-units>
+       <app-org-units [selection]="selectedOption" ></app-org-units>
       </div>
 
       <div *ngIf="selected.key === 'about-dhis'" >
