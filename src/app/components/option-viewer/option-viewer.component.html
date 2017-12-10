@@ -62,11 +62,11 @@
       </div>
 
       <div *ngIf="selected.key === 'about-dhis'" >
-        <app-about-dhis></app-about-dhis>
+        <app-about-dhis [selection]="selectedOption"  ></app-about-dhis>
       </div>
 
       <div *ngIf="selected.key === 'starting-dhis'" >
-        <app-starting-dhis></app-starting-dhis>
+        <app-starting-dhis [selection]="selectedOption"></app-starting-dhis>
       </div>
 
       <div *ngIf="selected.key === 'indicators'" >

@@ -23,6 +23,10 @@ export class GetHelpComponent implements OnInit {
 
   ngOnInit() {
     this.getHelpComponents();
+
+      //cheats the dhis menu position initially
+    this.showBottomSheet('app');
+    this.hideBottomSheet();
   }
 
   getHelpComponents(){

@@ -1,3 +1,189 @@
-<p>
-  starting-dhis works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Getting started with DHIS 2'" >
+    <h3>Getting started with DHIS 2</h3>
+    <p>After reading this chapter you will be able to understand:</p>
+
+    <ul>
+      <li>
+        <p>Start DHIS 2 from the desktop</p>
+      </li>
+      <li>
+        <p>How to log-in from the desktop</p>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <p>Create new users and user roles</p>
+      </li>
+    </ul>
+
+    <ul>
+      <li>
+        <p>What steps are needed to design a DHIS 2 database for your organisation</p>
+      </li>
+    </ul>
+
+    <h3>Prerequisites</h3>
+    <p>You must be sure that you have a current version of the Java Runtime installed on your machine. Depending on
+      your operating system, there are different ways of installing Java. The reader is referred to this website for
+      detailed information on getting java installed.</p>
+
+    <h3>Starting the DHIS 2 Live package</h3>
+    <p>The DHIS 2 Live package is the easiest way to get started with DHIS 2. DHIS 2 Live is appropriate for a
+      stand-alone type of installation. Simply download the application from here.
+    Once the file is downloaded, you can simply double-click the downloaded file, and get started using DHIS 2. </p>
+
+    <h3>Starting up with a blank database</h3>
+    <p>The live package comes with a demo database just like what you see on the online demo (which is based on the national
+      Sierra Leone HMIS), and if you want to start with a blank system/database and build
+      up your own system then you need to do the following:</p>
+
+    <p>1) Stop the DHIS 2 live if it is already running. Right click on the tray icon and select Exit.
+    The tray icon is the green symbol on the bottom right of your screen (on Windows) which should say' DHIS 2 Server running'
+      if you hold your mouse pointer over it.</p>
+    <p>2) Open the folder where the DHIS 2 live package is installed and locate the folder called "conf".</p>
+    <p>3) In conf/ open the file called 'hibernate.properties' in a text editor (notepad or similar) and do the following modification:
+    locate the string 'jdbc:h2:./database/dhis2' and replace the 'dhis2' part with any name that you want to give to your database
+      (e.g. dhis2_test).</p>
+    <p>4) Save and close the hibernate.properties file.</p>
+    <p>5) Start DHIS 2 Live by double-clicking on the file dhis2-live.exe in the DHIS 2 Live installation
+      folder or by using a desktop shortcut or menu link that you might have set up.</p>
+    <p>6) Wait for the browser window to open and the login screen to show, and then log in with username: admin and password: district </p>
+    <p>7) Now you will see a completely empty DHIS 2 system and you should start by adding your users, organisational
+      hierarchy, data elements, and datasets etc. Please refer to the other sections of the user manual for instructions on how to do this.</p>
+
+    <h3>Working directly with the H2 database</h3>
+    <p>
+    DHIS 2 Live uses an embedded H2 database. This has several advantages - there is no need
+    to install a separate database engine such as PostgresSql or MySql, and backup can be made by just copying the file. The whole db
+    exists in memory, which means high performance. The disadvantage is need for RAM. It is also not suitable for mulitiuser server
+    installations.</p>
+    <p>
+    In general, it is recommended to work with the database through the DHIS 2 user interface, but in some situations one may need to
+    manipulate the data directly. If one downloads H2 separately, it comes with a web interface. It can also be manipulated using
+    OpenOffice.org, using the following procedure. This assumes that dhis2-live is located in
+    the user's Linux home directory (represented by ~). Substitute the absolute path to your dhis2-live installation.
+    Start OpenOffice Word Processor and select Tools - Options, then Java - Class Path ... and click on Add Archive...
+    Select the following file (version may differ): ~/dhis2-live/webapps/dhis/WEB-INF/lib/h2-1.1.119.jar
+    Close OpenOffice completely and then open OpenOffice.org Database. Select connect to an existing database - JDBC
+    Datasource URL is h2:~/dhis2-live/database/dhis2;AUTO_SERVER=TRUE, and JDBC driver class is org.h2.Driver
+    User name is sa, password not needed. Finally, select a name and folder for the .odb file.
+    More tips</p>
+
+    <h3>Downloading and installing the server version</h3>
+    <p>The server version can be downloaded from dhis2.org/download. For detailed information on how to install it please
+      refer to the installation chapter in the implementation manual.</p>
+  </div>
+
+
+
+
+
+  <div *ngIf="selection === 'Logging on to DHIS 2'" >
+    <h3>Logging on to DHIS 2</h3>
+
+    <p>Regardless of whether you have installed the server version of the
+    desktop Live version, you will use a web-browser to log on to the
+    application. DHIS 2 should be compatible with most modern web-browsers,
+    although you will need to ensure that Java Script is enabled.</p>
+    <p>To log on to the application just enter http://localhost:8080/dhis if you
+    are using the DHIS 2 live package, or replace localhost with the name or IP
+    address of the server where the server version is installed.</p>
+    <p>Once you have started DHIS 2, either on-line or offline, the displayed
+    screen will prompt you to enter your registered ‘user name’ and
+    ‘password’. After entering the required information click on log-in button
+    to log into the application. The default user name and password are 'admin' and 'district'.
+      They should be changed immediately upon logging on the first time. </p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Creating new users and roles'">
+    <h3>Creating new users and roles</h3>
+
+    <p>This section will describe how to add new users to the DHIS 2
+    application.</p>
+
+    <h3>Open User Menu</h3>
+    <p>To create or find a user begin with clicking on the ‘user’ moduledisplayed in the drop down menu of the Maintenance module located on the
+    main tool bar on the top part of the displayed screen.</p>
+
+    <p>User names already registered will appear as a list as seen in the screen shot below.</p>
+    <p>You can search for specific user names in the user list by
+    entering the name in the ‘filter by user name’ field as shown
+    above.</p>
+
+
+    <h3>Add New User</h3>
+    <p>Under particular user role there can be more than one user. To add
+    new users go to the User options under the Maintenance module.</p>
+    <p>To add a new user, just follow these steps:</p>
+
+    <ul>
+      <li>
+        <p>Click on the Add New button.</p>
+      </li>
+      <li>
+        <p>Enter New User details like User name, Password, Confirm password, Surname, First name and Email in new user’s option tabs.</p>
+      </li>
+      <li>
+        <p>Click on Add button for confirmation of
+          new user details and follow the user error while creation of new
+          user.</p>
+      </li>
+      <li>
+        <p>The recently created new user can be seen in main’ User
+          management Screen</p>
+      </li>
+      <li>
+        <p>You can edit (like password, surname….etc) and delete the
+          details of new/old users by selecting corresponding User’s
+          Edit and Delete
+          Buttons.</p>
+      </li>
+      <li>
+        <p>Click on Save tab after editing all
+          details of a particular selected user.</p>
+      </li>
+    </ul>
+  </div>
+
+
+  <div *ngIf="selection === 'Define a new role'">
+    <h3>Define a new role</h3>
+    <p>As part of creating a user name you are required to define the user
+      role. Do so by clicking on the ‘user role’ appearing on the left side of
+      the displayed screen. This will lead you to the Role Management page where you will have
+      to click on Add new to create a new role.</p>
+    <p>The following screen will open and here in the first text box you
+      need to give Name of the Role such as Super User, Admin User, etc. The
+      second text box called ‘Description’ gives more information about the
+      type of User Role that is being created for e.g. State Admin User,
+      District Data Entry.</p>
+    <p>Next you will specify the particular data set(s) that are to be
+      made available to the particular role. You will also need to specify the
+      type of ‘authority’ to be given to the particular user. For each of the
+      three options namely Datasets, Reports and Authorities user can select
+      multiple options from the scroll down menu provided against each field.
+      A user can choose multiple options either by moving them
+      one-by-one.</p>
+    <p>In order for particular users to be able to enter data, you must
+      add them to both a dataset as well as an organisational unit level. You
+      can also select multiple datasets individually by pressing the Ctrl key
+      on the keyboard and clicking on individual datasets.</p>
+    <p>Finally when you have entered the required fields click on
+      Save which is located on the lower part of the
+      displayed screen. The desired user role and related authorisation will
+      be saved to the database, and can then be assigned to a particular
+      user.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Logging out of DHIS 2'" >
+    <h3>Logging out of DHIS 2</h3>
+    <p>Just click on the Log out link in the top right corner to exit the application.</p>
+  </div>
+
+
+</div>

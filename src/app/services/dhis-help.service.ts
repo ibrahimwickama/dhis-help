@@ -76,9 +76,7 @@ export class DhisHelpService {
           'Logging on to DHIS 2',
           'Creating new users and roles',
           'Define a new role',
-          'Logging out of DHIS 2',
-          'Quick intro to designing a DHIS 2 ',
-          'Database'],
+          'Logging out of DHIS 2'],
         key: "starting-dhis"
       },
 
