@@ -1,5 +1,5 @@
 <div class="container-fluid">
-  <div class="row">
+  <div class="row"  >
   <div class=" col-2 help-subs" >
 
         <!--imported selected card from help-->
@@ -11,13 +11,8 @@
         </div>
 
         <div class="trial" style="width: 100%; height: 250px" >
-
           <div style="color: white">
-
           </div>
-
-
-
         </div>
       </div>
       <div class="my-card-label">
@@ -38,7 +33,7 @@
     </div>
   </div>
   <div class=" col-10 help-main">
-    <div class="card">
+    <div class="card info-panel">
 
       <div *ngIf="selected.key === 'setting-dhis'" >
         <app-settings [selection]="selectedOption"></app-settings>
