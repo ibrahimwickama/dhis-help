@@ -1,3 +1,190 @@
-<p>
-  user-management works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Creating new users and roles'" >
+    <h3>Creating new users and roles</h3>
+    <p>This section will describe how to add new users and manage existing users to the DHIS2 application.
+      You can create as many user names as you need. Each user can be assigned certain privileges, and can be assigned
+      to certain organisation units for which they will be enabled to enter data on behalf of. To access the user module,
+      choose "Maintenance-&gt;Users" from the main menu.</p>
+
+    <h3>User maintenance</h3>
+    <p>User names already registered will appear as a list as seen in the screen shot below.</p>
+    <p>You can search for specific user names in the user list by
+    entering the name in the ‘filter by user name’ field as shown above.</p>
+
+    <h3>User role management</h3>
+    <p>As part of creating a user name you are required to define the user
+    role. Do so by clicking on the ‘user role’ appearing on the left side of
+    the displayed screen. This will lead you to the Role Management page where you will have
+    to click on Add new to create a new role.</p>
+    <p>The following screen will open and here in the first text box you
+    need to give Name of the Role such as Super User, Admin User, etc. The
+    second text box called ‘Description’ gives more information about the
+    type of User Role that is being created for e.g. State Admin User, District Data Entry.</p>
+    <p>Next you will specify the particular data set(s) that are to be
+    made available to the particular role. You will also need to specify the
+    type of ‘authority’ to be given to the particular user. For each of the
+    three options namely Datasets, Reports and Authorities user can select
+    multiple options from the scroll down menu provided against each field.
+    A user can choose multiple options either by moving them one-by-one.</p>
+    <p>In order for particular users to be able to enter data, you must
+    add them to both a dataset as well as an organisational unit level. You
+    can also select multiple datasets individually by pressing the Ctrl key
+    on the keyboard and clicking on individual datasets.</p>
+    <p>Finally when you have entered the required fields click on
+    Save which is located on the lower part of the
+    displayed screen. The desired user role and related authorisation will
+    be saved to the database, and can then be assigned to a particular user.</p>
+
+    <h3>User management</h3>
+    <p>Under particular user role there can be more than one user. To add
+    new users go to the User options under the Maintenance module.</p>
+    <p>To add a new user, just follow these steps:</p>
+
+    <ul>
+      <li>
+        <p>Click on the Add New button.</p>
+      </li>
+      <li>
+        <p>Enter New User details like User name, Password, Confirm password, Surname,
+          First name and Email in new user’s option tabs.</p>
+      </li>
+      <li>
+        <p>Click on Add button for confirmation of
+          new user details and follow the user error while creation of new user.</p>
+      </li>
+      <li>
+        <p>The recently created new user can be seen in main’ User
+          management Screen</p>
+      </li>
+      <li>
+        <p>You can edit (like password, surname….etc) and delete the
+          details of new/old users by selecting corresponding User’s
+          Edit and Delete Buttons.</p>
+      </li>
+      <li>
+        <p>Click on Save tab after editing all
+          details of a particular selected user.</p>
+      </li>
+      <li>
+        <p>Users must be assigned to at least one organisational unit. Users are able to have
+          access to all children of the organisational unit(s) which have been assigned to them. For instance, if a user
+          has been assigned to "District X" which has several facilities contained in the district, the user would have access
+          to the district's data, as well as all of the facilities contained within the district. </p>
+        <p>In order for users to be able to enter data for specific organisational units, they must be assigned
+          these units. If a user is responsible for entering data for all facilities for a given district, they should typically be
+          assigned the district, and all of the facilities contained within the district.</p>
+      </li>
+    </ul>
+
+    <h3>User group management</h3>
+    <p>User groups allow you to send notifications to multiple users at the same time. Simply click "Add new" from
+      the "User group" screen, provide a name for the group, and add the desired users from the "Available users" list to
+      the "Group members" list. </p>
+
+    <h3>User by organisation unit</h3>
+    <p>The "User by organisation unit" function allows you see which users have been assigned
+      to a particular organisation unit. Simply select the organisation unit from the tree on the left,
+      and a list of users which have been assigned to this particular organisation unit will be displayed</p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'User maintenance'" >
+    <h3>User maintenance</h3>
+    <p>User names already registered will appear as a list as seen in the screen shot below.</p>
+    <p>You can search for specific user names in the user list by
+    entering the name in the ‘filter by user name’ field as shown above.</p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'User role management'" >
+    <h3>User role management</h3>
+    <p>As part of creating a user name you are required to define the user
+    role. Do so by clicking on the ‘user role’ appearing on the left side of
+    the displayed screen. This will lead you to the Role Management page where you will have
+    to click on Add new to create a new role.</p>
+    <p>The following screen will open and here in the first text box you
+    need to give Name of the Role such as Super User, Admin User, etc. The
+    second text box called ‘Description’ gives more information about the
+    type of User Role that is being created for e.g. State Admin User, District Data Entry.</p>
+    <p>Next you will specify the particular data set(s) that are to be
+    made available to the particular role. You will also need to specify the
+    type of ‘authority’ to be given to the particular user. For each of the
+    three options namely Datasets, Reports and Authorities user can select
+    multiple options from the scroll down menu provided against each field.
+    A user can choose multiple options either by moving them one-by-one.</p>
+    <p>In order for particular users to be able to enter data, you must
+    add them to both a dataset as well as an organisational unit level. You
+    can also select multiple datasets individually by pressing the Ctrl key
+    on the keyboard and clicking on individual datasets.</p>
+    <p>Finally when you have entered the required fields click on
+    Save which is located on the lower part of the
+    displayed screen. The desired user role and related authorisation will
+    be saved to the database, and can then be assigned to a particular
+    user.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'User management'" >
+    <h3>User management</h3>
+    <p>Under particular user role there can be more than one user. To add
+    new users go to the User options under the Maintenance module.</p>
+    <p>To add a new user, just follow these steps:</p>
+
+    <ul>
+      <li>
+        <p>Click on the Add New button.</p>
+      </li>
+      <li>
+        <p>Enter New User details like User name, Password, Confirm password, Surname, First name and Email in new user’s option tabs.</p>
+      </li>
+      <li>
+        <p>Click on Add button for confirmation of
+          new user details and follow the user error while creation of new
+          user.</p>
+      </li>
+      <li>
+        <p>The recently created new user can be seen in main’ User
+          management Screen</p>
+      </li>
+      <li>
+        <p>You can edit (like password, surname….etc) and delete the
+          details of new/old users by selecting corresponding User’s
+          Edit and Delete
+          Buttons.</p>
+      </li>
+      <li>
+        <p>Click on Save tab after editing all
+          details of a particular selected user.</p>
+      </li>
+      <li>
+        <p>Users must be assigned to at least one organisational unit. Users are able to have access to all children
+          of the organisational unit(s) which have been assigned to them. For instance, if a user has been assigned
+          to "District X" which has several facilities contained in the district, the user would have access to the district's
+          data, as well as all of the facilities contained within the district. </p>
+        <p>In order for users to be able to enter data for specific organisational units,
+          they must be assigned these units. If a user is responsible for entering data for all facilities for a given
+          district, they should typically be assigned the district, and all of the facilities contained within the district.</p>
+      </li>
+    </ul>
+  </div>
+
+
+  <div *ngIf="selection === 'User group management'" >
+    <h3>User group management</h3>
+    <p>User groups allow you to send notifications to multiple users at the same time. Simply click "Add new" from
+      the "User group" screen, provide a name for the group, and add the desired users from the "Available users" list to
+      the "Group members" list. </p>
+  </div>
+
+
+  <div *ngIf="selection === 'User by organisation unit'" >
+    <h3>User by organisation unit</h3>
+    <p>The "User by organisation unit" function allows you see which users have been assigned to
+      a particular organisation unit. Simply select the organisation unit from the tree on the left, and a list
+      of users which have been assigned to this particular organisation unit will be displayed</p>
+  </div>
+
+
+</div>

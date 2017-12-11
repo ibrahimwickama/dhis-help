@@ -1,3 +1,137 @@
-<p>
-  indicators works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Indicators'">
+    <h3>Indicators</h3>
+    <p>Indicators are composed of multiple data elements, and typically consist of a numerator and denominator.
+      Indicators are never entered in DHIS2, but are derived from combinations of data elements and factors.
+      Indicators are used to calculate coverage rates, incidence and other values are are a result of data element
+      values that have been entered into the system. </p>
+    <p>To access the Indicator maintains page, press Maintenance -&gt; Data Element and Indicators -&gt; Indicator from the main DHIS2
+      menu. Similar to data elements, you can add, delete, modify and view extra information about the indicators in the system. </p>
+    <p>Indicators can be filtered by entering the name or a part of the indicator name in the "Filter by name" field.
+      Similar to data elements, indicators can be added by pressing the "Add new" button. Other operations available from this menu
+      are as follows. </p>
+
+    <ul>
+      <li>
+        <p> Existing indicators can be edited. </p>
+      </li>
+      <li>
+        <p> Translate an existing indicator. </p>
+      </li>
+      <li>
+        <p> Delete an existing indicator. </p>
+      </li>
+      <li>
+        <p> Get detailed information about this indicator. </p>
+      </li>
+    </ul>
+
+    <p>To add a new indicator, click the "Add new" button. The following screen is displayed. </p>
+    <p>Each of the fields marked with an asterisk are compulsory. A description of each field is provided below. </p>
+
+    <ul>
+      <li>
+        <p>Name: The full name of the indicator, such as "Incidence of confirmed malaria cases per 1000 population"</p>
+      </li>
+      <li>
+        <p>Short name: An abbreviated name of the indicator such as "Inc conf. malaria per 1000 pop".
+          The short name must be less than or equal to 25 characters, including spaces.</p>
+      </li>
+      <li>
+        <p>Alternative name: An additional field for a possible alternative name of the indicator. </p>
+      </li>
+      <li>
+        <p>Code: In many countries, indicators are often assigned a particular code. This code can be entered here. </p>
+      </li>
+      <li>
+        <p>Description: A brief, informative description of the indicator and how it is calculated can be entered here. </p>
+      </li>
+      <li>
+        <p>Annualized: Determines whether or not an annualization factor is applied during the calculation of the indicator.
+          Typically, annualized indicator's numerator are multiplied by a factor of 12, and the denominator is for instance
+          a yearly population figure. This allows for monthly coverage values to be calculated with yearly population figures.</p>
+      </li>
+      <li>
+        <p>Type: This field will determine a factor that will automatically be applied during the calculation of the indicator.
+          Possible choices are determined by the Indicator Types (described below). For instance, a "Percent" indicator
+          will automatically be multiplied by a factor of 100 when exported to the data mart, so that it will display as a percentage. </p>
+      </li>
+      <li>
+        <p>URL: Can be used as a link to an indicator registry, where a full metadata description of the indicator can be made available. </p>
+      </li>
+    </ul>
+    <p>To define the numerator and denominator, simply press the respective button, and the following dialogue will be displayed. </p>
+    <p>Essentially, an indicator is a formula that can be composed of multiple data elements, constant factors, and mathematical operators.
+      In order to define a new indicator proceed with the following steps. </p>
+
+    <ol>
+      <li>
+        <p>Enter at least the required fields (Name and short name) from the indicator maintenance screen.</p>
+      </li>
+      <li>
+        <p>Next, press "Edit numerator" from the main indicator maintenance screen. This will provide a dialog where you
+          can define the actual formula of the indicator's numerator..</p>
+      </li>
+      <li>
+        <p>A description of the numerator/denominator must be provided in the "Description field".
+          This should provide a clear description of </p>
+      </li>
+      <li>
+        <p>Define the formula of the indicator by selecting the data elements that should compose
+          the numerator from the "Data elements" field. Simply select the data element, and double click it.
+          It will now appear in the formula. You formula must be mathematically valid, including the proper use of parentheses
+          when necessary. You can double click on each of the mathematical operator buttons below the indicator formula
+          definition to add them to your formula. </p>
+      </li>
+      <li>
+        <p>Click the Save button to save all changes to the numerator. Click cancel to discard any changes that you have made. </p>
+      </li>
+      <li>
+        <p>Follow the same procedure in order to define the denominator. </p>
+      </li>
+    </ol>
+
+  </div>
+
+
+  <div *ngIf="selection === 'Indicator types'" >
+    <h3>Indicator types</h3>
+    <p>Indicator types simply define a factor that will be applied during aggregation. Indicator values that are
+      calculate during a data mart export or report table generation process will appear properly formatted, and will
+      therefore not require an additional multiplier (e.g. 100 in the case of percents) for the values to appear correctly formatted. </p>
+    <p>The indicator type maintenance panel has all of the same functions (Add new, Edit, Translate, Delete, and Information)
+      as the Indicator maintenance section. </p>
+    <p>There are only two fields that need to be filled-in to create an indicator type, Name and Factor, as seen below.
+      Name refers to the Indicator type (e.g. Per cent, Per thousand, Per ten thousand, etc). The factor is the numeric factor
+      that will be applied during the calculation of the indicator. </p>
+  </div>
+
+  <div *ngIf="selection === 'Indicator groups'">
+    <h3>Indicator groups</h3>
+    <p>Indicator groups function essentially the same as data element groups. Multiple indicators can be assigned to a
+      group for easy filtering and analysis. To assign indicators to groups, simple press Maintenance-&gt;Data elements and
+      indicators-&gt;Indicator groups. See the section on Data element groups for detailed instructions of how to use this module. </p>
+  </div>
+
+  <div *ngIf="selection === 'Indicator group editor'" >
+    <h3>Indicator group editor</h3>
+    <p>The indicator group editor module functions essentially the same as the data element group editor module, except on indicators.
+      You can easily rearrange the groups that indicators belong to with this module. To access it, choose To assign indicators to groups,
+      simple press Maintenance-&gt;Data elements and indicators-&gt;Indicator group editor from the main menu. See the section on Data
+      element group editor for further instructions. </p>
+  </div>
+
+
+  <div *ngIf="selection === 'Indicator group sets'">
+    <h3>Indicator group sets</h3>
+    <p>Similar to data element group sets, indicator group sets serve to create combined groups of similar indicators.
+      For instance, you might have a group of indicators called "Malaria" and "Leishmaniasis". Both of these groups could be combined
+      into a group set called "Vector-borne diseases". Indicator groups sets are used during analysis of data to combine similar themes
+      of indicators. To access this module choose Maintenance-&gt;Data elements and indicators-&gt;Indicator group sets from the main menu.
+      The following dialogue will appear. </p>
+    <p>Supply a name for the indicator group set, and then move the desired members from the "Available Indicator Groups" to
+      the "Group members". Click "Add" to save your changes and "Cancel" to discard any changes. </p>
+  </div>
+
+
+</div>

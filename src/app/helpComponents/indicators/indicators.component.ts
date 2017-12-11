@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-indicators',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./indicators.component.css']
 })
 export class IndicatorsComponent implements OnInit {
+
+  @Input() selection;
 
   constructor() { }
 

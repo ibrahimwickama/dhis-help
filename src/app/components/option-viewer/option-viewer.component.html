@@ -65,11 +65,11 @@
       </div>
 
       <div *ngIf="selected.key === 'indicators'" >
-        <app-indicators></app-indicators>
+        <app-indicators [selection]="selectedOption" ></app-indicators>
       </div>
 
       <div *ngIf="selected.key === 'user-management'" >
-        <app-user-management></app-user-management>
+        <app-user-management [selection]="selectedOption" ></app-user-management>
       </div>
 
       <div *ngIf="selected.key === 'data-visualizer'" >
