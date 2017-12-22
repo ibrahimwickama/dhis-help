@@ -1,85 +1,206 @@
-<div *ngIf="selection === 'Thematic layer 1 and 2'" >
-  <h3>Thematic layer 1 and 2</h3>
-  <p>The two thematic layer panels let you use your data for thematic mapping. All you need to do is selecting your
-    desired indicator/dataelement-period-map combination, then the organisation unit level and finally the parent to define
-    the boundary. If your database has coordinates for these organisation units they will appear on the map.</p>
-  <p>You may choose between legend types: automatic and predefined. Automatic means that the application will create a
-    legend set for you based on your what method, number of classes, low color and high color you select. Method alludes to
-    the size of the legend classes. Set to Equal intervals they will be “highest map value – lowest map value / number of classes”.
-    Set to Equal group count the legend creator will try to distribute the organisation units evenly. Choose Fixed bounds and you may
-    define your own class break values, type e.g. “20,40,60” using a comma to separate each of them. The legend will appear
-    as an even gradation from the start color to the end color. Predefined legend sets are described in  .</p>
-  <p>Low radius and high radius only have effect on points (facilities) and decides the the circle radius
-    for points with the lowest and highest value.</p>
-  <p>The map view combo box lists all map views (favorites) saved by the user. The settings that are
-    stored in the map view is automatically applied to the thematic map panel. Favorite map views are described in .</p>
-  <p>All available layer options are now grouped together in the thematic layer menu, see picture below.</p>
-  <p>Edit layer: Opens up the layer configuration window, see the thematic mapping screenshot.</p>
-  <p>Refresh: Refreshes the map boundaries, data and legend. Usually not necessary.</p>
-  <p>Clear: Clears the entire layer, i.e. the configuration window, the map and the legend panel.</p>
-  <p>Filter: Opens up the filter window and lets you filter out organisation units from the map by value. See the picture below.</p>
-  <p>Search: Opens up the search window and lets you search for and locate organisation units on the map. See picture below.</p>
-  <p>Labels: Opens up the label window and lets you add labels to the organisation units on the map. See picture below.</p>
-  <p>Opacity: Set the layer opacity/transparency to 10, 20, 30, 40, 50, 60, 70, 80, 90 or 100%. Higher values of opacity make the
-    layer more transparent, so that the underlying layer is more visible. An opacity level of zero will provide a fully opaque layer.</p>
-  <p>History: Provides you with a list of your 10 previous maps/selections. They are temporary and thus gone when the application is restarted.</p>
-</div>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Thematic layer 1 and 2'" >
+    <h3>Thematic layer 1 and 2</h3>
+    <p>The two thematic layer panels let you use your data for thematic mapping. All you need to do is selecting your
+      desired indicator/dataelement-period-map combination, then the organisation unit level and finally the parent to define
+      the boundary. If your database has coordinates for these organisation units they will appear on the map.</p>
+    <p>You may choose between legend types: automatic and predefined. Automatic means that the application will create a
+      legend set for you based on your what method, number of classes, low color and high color you select. Method alludes to
+      the size of the legend classes. Set to Equal intervals they will be “highest map value – lowest map value / number of classes”.
+      Set to Equal group count the legend creator will try to distribute the organisation units evenly. Choose Fixed bounds and you may
+      define your own class break values, type e.g. “20,40,60” using a comma to separate each of them. The legend will appear
+      as an even gradation from the start color to the end color. Predefined legend sets are described in  .</p>
+    <p>Low radius and high radius only have effect on points (facilities) and decides the the circle radius
+      for points with the lowest and highest value.</p>
+    <p>The map view combo box lists all map views (favorites) saved by the user. The settings that are
+      stored in the map view is automatically applied to the thematic map panel. Favorite map views are described in .</p>
+    <p>All available layer options are now grouped together in the thematic layer menu, see picture below.</p>
+    <p>Edit layer: Opens up the layer configuration window, see the thematic mapping screenshot.</p>
+    <p>Refresh: Refreshes the map boundaries, data and legend. Usually not necessary.</p>
+    <p>Clear: Clears the entire layer, i.e. the configuration window, the map and the legend panel.</p>
+    <p>Filter: Opens up the filter window and lets you filter out organisation units from the map by value. See the picture below.</p>
+    <p>Search: Opens up the search window and lets you search for and locate organisation units on the map. See picture below.</p>
+    <p>Labels: Opens up the label window and lets you add labels to the organisation units on the map. See picture below.</p>
+    <p>Opacity: Set the layer opacity/transparency to 10, 20, 30, 40, 50, 60, 70, 80, 90 or 100%. Higher values of opacity make the
+      layer more transparent, so that the underlying layer is more visible. An opacity level of zero will provide a fully opaque layer.</p>
+    <p>History: Provides you with a list of your 10 previous maps/selections. They are temporary and thus gone when the application is restarted.</p>
+  </div>
 
 
-<div *ngIf="selection === 'Facility layer'"  >
-  <h3>Facility layer</h3>
-  <p>This layer displays icons that represent facilities based on the facility type. Currently,
-    "Type" is the only supported group set. Polygons will not show up on the map, so make sure to select a facility
-    level. Click an icon on the map to open the context menu with two options. "Show information sheet" provides you with data
-    for several data elements for this organisation unit. The data element group and period type are "system settings"
-    called "Infrastructural data elements" and "Infrastructural period type". The second option in the context menu is "Relocate" and
-    lets you graphically move the organisation unit to a different location. The new coordinate will be stored permanently.</p>
-</div>
+  <div *ngIf="selection === 'Facility layer'"  >
+    <h3>Facility layer</h3>
+    <p>This layer displays icons that represent facilities based on the facility type. Currently,
+      "Type" is the only supported group set. Polygons will not show up on the map, so make sure to select a facility
+      level. Click an icon on the map to open the context menu with two options. "Show information sheet" provides you with data
+      for several data elements for this organisation unit. The data element group and period type are "system settings"
+      called "Infrastructural data elements" and "Infrastructural period type". The second option in the context menu is "Relocate" and
+      lets you graphically move the organisation unit to a different location. The new coordinate will be stored permanently.</p>
+  </div>
 
 
-<div *ngIf="selection === 'Symbol layer'">
-  <h3>Symbol layer</h3>
-  <p>This layer displays icons that represent areas/polygons like provinces, districts etc instead of facilities/points.
-    Thus, in this layer you are not supposed to select a facility level, but instead a level of provinces, districts etc.
-    In order to render this layer you need to create a predefined legend set of images, described in .</p>
-</div>
+  <div *ngIf="selection === 'Symbol layer'">
+    <h3>Symbol layer</h3>
+    <p>This layer displays icons that represent areas/polygons like provinces, districts etc instead of facilities/points.
+      Thus, in this layer you are not supposed to select a facility level, but instead a level of provinces, districts etc.
+      In order to render this layer you need to create a predefined legend set of images, described in .</p>
+  </div>
 
 
-<div *ngIf="selection === 'Register favorite map views'" >
-  <h3>Register favorite map views</h3>
-  <p>Click the "Favorite map views" button (star icon) on the toolbar to get the context menu. The first option
-    is "Manage favorites" which opens up a window where you are supposed to type the name of the favorite and select the
-    layer you want to save. If you are an administrator you can check the "System" checkbox to make the favorite
-    available to all users. From the bottom combobox you may delete a favorite or add it to the DHIS 2 dashboard.</p>
-</div>
+  <div *ngIf="selection === 'Register favorite map views'" >
+    <h3>Register favorite map views</h3>
+    <p>Click the "Favorite map views" button (star icon) on the toolbar to get the context menu. The first option
+      is "Manage favorites" which opens up a window where you are supposed to type the name of the favorite and select the
+      layer you want to save. If you are an administrator you can check the "System" checkbox to make the favorite
+      available to all users. From the bottom combobox you may delete a favorite or add it to the DHIS 2 dashboard.</p>
+  </div>
 
 
-<div *ngIf="selection === 'Register legend sets'" >
-  <h3>Register legend sets</h3>
-  <p>Example usage (vaccination coverage): Firstly, create the legends that are going to constitute the legend set.
-    The first one could be "Low bad" (display name), 0 (start value), 30 (end value), red (color). Then create "Medium" / 30 / 70 / yellow
-    and finally "High good" / 70 / 100 / green. Now, open the "legend set" panel, type e.g. "High is good" as display
-    name and select the desired legends below. Multi-select your three legends by pressing and holding the Ctrl/Shift
-    button when selecting. Then click the register button to store the legend set. Assign indicators/data elements to your legend
-    set in one of the two last panels. Select the legend set in the combo box and multi-select items in the list below.
-    Click the assign button to update the legend set. Please see the referred window in section 1.1.</p>
-</div>
+  <div *ngIf="selection === 'Register legend sets'" >
+    <h3>Register legend sets</h3>
+    <p>Example usage (vaccination coverage): Firstly, create the legends that are going to constitute the legend set.
+      The first one could be "Low bad" (display name), 0 (start value), 30 (end value), red (color). Then create "Medium" / 30 / 70 / yellow
+      and finally "High good" / 70 / 100 / green. Now, open the "legend set" panel, type e.g. "High is good" as display
+      name and select the desired legends below. Multi-select your three legends by pressing and holding the Ctrl/Shift
+      button when selecting. Then click the register button to store the legend set. Assign indicators/data elements to your legend
+      set in one of the two last panels. Select the legend set in the combo box and multi-select items in the list below.
+      Click the assign button to update the legend set. Please see the referred window in section 1.1.</p>
+  </div>
 
 
-<div *ngIf="selection === 'Exporting/saving map images'" >
-  <h3>Exporting/saving map images</h3>
-  <p>Click the image icon on the map toolbar and the print window will open. Title: Image title,
-    will appear as a headline in the image. Layers: Choose whether polygons, points or both will be printed. Width/Height:
-    The pixel resolution of the image. Choose among the predefined "small" (800x600), "medium" (1190x880), "large"
-    (1920x1200) or type the exact number of pixels yourself (type the number only, avoid text like "px"). If you want to exclude
-    the legend from the image, untick the legend checkbox. Finally click the export button to print the image (PNG).
-    Please see the referred window in section 1.1.</p>
-</div>
+  <div *ngIf="selection === 'Exporting/saving map images'" >
+    <h3>Exporting/saving map images</h3>
+    <p>Click the image icon on the map toolbar and the print window will open. Title: Image title,
+      will appear as a headline in the image. Layers: Choose whether polygons, points or both will be printed. Width/Height:
+      The pixel resolution of the image. Choose among the predefined "small" (800x600), "medium" (1190x880), "large"
+      (1920x1200) or type the exact number of pixels yourself (type the number only, avoid text like "px"). If you want to exclude
+      the legend from the image, untick the legend checkbox. Finally click the export button to print the image (PNG).
+      Please see the referred window in section 1.1.</p>
+  </div>
 
 
-<div *ngIf="selection === 'Measure distance'" >
-  <h3>Measure distance</h3>
-  <p>Click the two-way arrow icon on the map toolbar to enter measuring mode. Now, click your desired start
-    location on the map and a dotted- line will follow the cursor toward your destination. Single click to create a line
-    point, double click to finish the line. To exit measuring mode, click the toolbar icon again or close the window.</p>
+  <div *ngIf="selection === 'Measure distance'" >
+    <h3>Measure distance</h3>
+    <p>Click the two-way arrow icon on the map toolbar to enter measuring mode. Now, click your desired start
+      location on the map and a dotted- line will follow the cursor toward your destination. Single click to create a line
+      point, double click to finish the line. To exit measuring mode, click the toolbar icon again or close the window.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Importing coordinates'"  >
+    <h3>Importing coordinates</h3>
+    <p>Step 1 - Simplify/generalize your geographical data</p>
+    <p>The boundaries in geographical data files are usually very accurate, too much so for the needs of a web-based GIS. This usually
+      does not affect the performance when using GIS files on a a local system, but it is usually necessary to optimize the geographical
+      data for the web-based GIS system of DHIS2. All geographical data needs to be downloaded from the server and rendered in a browser,
+      so if the data is overly complex, the performance of the DHIS2 GIS will be
+      negatively impacted. This optimization process can be described as follows:</p>
+    <p>Coordinates: The number of significant decimal digits (e.g. 23.02937874993774) should be shortened to fewer digits
+      (e.g. 23.03). Although this will result in some inaccuracies on the map, given the usual scale at which maps in DHIS2 are
+      produced (&gt; 1:50,000), the loss of precision should not be noticeable. Normally, no more than four significant digits
+      after the decimal point should be necessary.
+    Polygons: In addition to shortening the number of significant digits, the actual number of points should also be reduced to an
+      optimal level. Finding this optimal level may take a bit of experimentation. Decreasing the precision of the
+      points as well as the number of points through generalization, will lead to degradation of the polygon. However, after a bit
+      of experimentation, an optimal level of generalization can be found, where the accuracy of the polygon is visually acceptable,
+      and the performance of the GIS is optimal.</p>
+    <p>For polygons, we need to make the boundary lines less detailed by removing some of the line points. One possible method is
+      the use of MapShaper which is an online tool which can be used to generalize geographical data. To use MapShaper,
+      simply upload your shapefile to the site. Then, at the center bottom you see a slider that starts at 0%. It is usually
+      acceptable to drag it up to about 80%. In the left menu you can check "show original lines" to compare the result and
+      you may want to give a different simplification method a try. When you are happy with the result, click "export" in
+      the top right corner. Then check the first of the four options called "Shapefile - polygons", click "create" and wait
+      for the download buttons to appear. Now, download the two files to your local computer (being sure to rename the file so
+      that you do not overwrite your existing, original data). Move on to the next step with your new simplified shapefile.</p>
+    <p>Step 2 - Convert the shapefile to GML</p>
+    <p>The recommended tool for geographical format conversions is called "ogr2ogr". This should be available for most Linux
+      distributions sudo apt-get install gdal-bin. For Windows, go to http://fwtools.maptools.org/ and download "FWTools",
+      install it and open up the FWTools command shell. During the format conversion we also want to ensure that the
+      output has the correct coordinate projection (called EPSG:4326 with geographic longitude and latitude).
+      For a more detailed reference of geographic coordinates, please refer to this site. If you have already reprojected
+      the geographic data to the geographic latitude/longitude (EPSG:4326) system, there is no need to explicitly define the output
+      coordinate system, assuming that ogr2ogr can determine the input spatial reference system. Note that most shapefiles are using the
+      EPSG:4326 system. You can determine the spatial reference system by executing the following command.</p>
+    <p>ogrinfo -al -so filename.shp</p>
+    <p>Assuming that the projection is reported to be EPSG:27700 by ogrinfo, we can transform it to
+      EPSG:4326 by executing the following command.ogr2ogr -s_srs EPSG:27700 -t_srs EPSG:4326 -f GML filename.gml
+      filename.shp </p>
+    <p>If the geographic data is already in EPSG:4326, you can simply transform the
+      shapefile to GML by executing the following command. </p>
+    <p>ogr2ogr -f GML filename.gml filename.shp</p>
+    <p> You will find the created GML file in the same folder as the shapefile.</p>
+    <p>Step 3 - Prepare the GML file</p>
+    <p>Unfortunately, the GML file is not ready for importation yet. Open it in a robust text editor like Geany
+      (Linux) or Notepad++ (Windows). GML is an XML based format which means that you will recognize the regular XML tag hierarchy.
+      In the GML file an organisation unit is represented as a &lt;gml:featureMember&gt;. Inside the feature members we usually find a lot
+      of attributes, but we are just going to import their coordinates. In order to do this DHIS 2 will match the name of the feature members
+      to the organisation unit names in the database. To get the name of the feature members in the GML file the importer will look for a property
+      called "ogr:Name". Figure out what property that is holding the name of the feature members
+      (could be "ogr:DISTRICT_NAME", "ogr:NAME_1" or whatever, this differs from shapefile to shapefile) and rename it to "ogr:Name".
+      Ensure that both the start and the end tags are renamed properly. They are supposed to
+      look like e.g.: &lt;ogr:Name&gt;Moyamba District&lt;/ogr:Name&gt;</p>
+    <p>Note that the name of the feature members in the GML file must be spelled exactly the same
+      as the organisation units in the database. Otherwise the importer will not recognize it and thus not transfer any
+      coordinates. E.g. "Moyamba" in the GML file might be called "Moyamba District" in the database. Creative use
+      of the "rename all" function in the text editor is usually of great help in these situations, as you do not want
+      to edit numerous feature members manually. Have a brief look at the names and compare them to the names in the database.
+      If they seem to match fairly good, it is about time to do a preview in the import-export module.</p>
+    <p>Go to Services -&gt; Import-Export, select "Preview", select the GML file and click "Import". Look for
+      new/updated organisation units. Our intention is to add coordinates to already existing organisation units
+      in the database, so we want as many updates as possible and 0 new. Those listed as new will be created as root
+      units and mess up the organisation unit trees in DHIS 2. If any listed as new, click the number and the organisation units
+      in question will appear in the list below. If there are any slight misspellings compared to the organisation unit
+      names in the database - fix them and do the preview again. Otherwise, click the "discard all" button below the
+      list and then the "Import all" button above the list.</p>
+    <p>If the import process completes successfully, you should now be able to utilize the geographical data in the DHIS2 GIS.
+      If not, check the log for hints and look for common errors such as:</p>
+    <p>- Name duplicates in the GML file. The name column in the database is unique and does not accept two organisation units with the same name.</p>
+    <p>- The "shortname" column in the organisationunit table in your database has a too small varchar definition. Increase it to 100.</p>
+    <p>- Special name characters in the GML file. Be sure to convert these to appropirate XML equivalents or escape sequences.</p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Register overlays'"  >
+    <h3>Register overlays</h3>
+    <p>Overlays are geographical layers that do not have any direct linkage
+    to data in the database. Examples include roads, rivers, airports, ports,
+    and other geographical information that you may want to display on your
+    map, but that is not necessarily linked to data contained in the DHIS
+    database. The Register Overlay panel will allow you to
+    add new layers and determine how they will be represented visually on the
+    map. </p>
+
+    <ul>
+      <li>
+        <p>Display name: Represents your overlay in
+          the layer tree in the upper right corner.</p>
+      </li>
+      <li>
+        <p>Map source file: The GeoJSON file
+          name.</p>
+      </li>
+      <li>
+        <p>Fill color: Decides the fill color if the
+          layer is a polygon layer. </p>
+      </li>
+      <li>
+        <p>Fill opacity: Select an opacity level
+          between 0 (invisible) and 1 (solid).</p>
+      </li>
+      <li>
+        <p>Stroke color: The stroke color over lines
+          and polygon borders.</p>
+      </li>
+      <li>
+        <p>Stroke width: Select a stroke width between
+          0 and 4.</p>
+      </li>
+    </ul>
+
+    <h3>Copying files to the DHIS application</h3>
+    <p>Currently, your GeoJSON files should be placed in the
+    DHIS2_HOME/geojson of your DHIS application to be accessible to the GIS
+    module. If the GeoJSON directory does not exist, you will need to create
+    it manually and copy your GeoJSON files there.</p>
+  </div>
 </div>
