@@ -81,7 +81,7 @@
       </div>
 
       <div *ngIf="selected.key === 'reports-module'" >
-        <app-reports-module></app-reports-module>
+        <app-reports-module [selection]="selectedOption" ></app-reports-module>
       </div>
 
       <div *ngIf="selected.key === 'data-entry'" >

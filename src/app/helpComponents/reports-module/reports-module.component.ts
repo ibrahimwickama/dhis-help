@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-reports-module',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reports-module.component.css']
 })
 export class ReportsModuleComponent implements OnInit {
+
+  @Input() selection;
 
   constructor() { }
 
