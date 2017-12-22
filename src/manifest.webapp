@@ -1,7 +1,7 @@
 {
     "version": "1.0.0",
-    "name": "Interactive Archive",
-    "description": "Interactive archive",
+    "name": "Interactive Help",
+    "description": "Interactive help",
     "launch_path": "index.html",
     "icons": {
         "16": "favicon.ico",

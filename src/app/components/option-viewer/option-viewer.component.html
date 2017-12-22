@@ -6,7 +6,7 @@
     <div class="card myown-card" >
       <div class="my-card-image">
         <div style="width: 100%; height: 250px; text-align: center" >
-          <img src="../assets/icons/dashboard.png" style="width: 280px; height: 250px">
+          <img src="./assets/icons/dashboard.png" style="width: 280px; height: 250px">
           <!--<img [src]="getIcon(app.launchUrl, app.icons)" style="width: 150px; height: 150px">-->
         </div>
 
@@ -73,7 +73,7 @@
       </div>
 
       <div *ngIf="selected.key === 'data-visualizer'" >
-        <app-data-visualizer></app-data-visualizer>
+        <app-data-visualizer [selection]="selectedOption" ></app-data-visualizer>
       </div>
 
       <div *ngIf="selected.key === 'using-gis'" >

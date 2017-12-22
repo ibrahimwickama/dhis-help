@@ -13,7 +13,6 @@ import { PivotTableComponent } from './pages/pivot-table/pivot-table.component';
 import { UserSupportAppComponent } from './pages/user-support-app/user-support-app.component';
 import { DataEntryComponent } from './pages/data-entry/data-entry.component';
 import { ReportsComponent } from './pages/reports/reports.component';
-import { DataVisualizerComponent } from './pages/data-visualizer/data-visualizer.component';
 import { EventCaptureComponent } from './pages/event-capture/event-capture.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CoreAppsComponent } from './pages/core-apps/core-apps.component';
@@ -35,6 +34,7 @@ import { ReportsModuleComponent } from './helpComponents/reports-module/reports-
 import { DataAdministrationComponent } from './helpComponents/data-administration/data-administration.component';
 import { DataElementsComponent } from './helpComponents/data-elements/data-elements.component';
 import { ImportExportComponent } from './helpComponents/import-export/import-export.component';
+import {DataVisualizerComponent} from "./helpComponents/data-visualizer/data-visualizer.component";
 
 @NgModule({
   declarations: [

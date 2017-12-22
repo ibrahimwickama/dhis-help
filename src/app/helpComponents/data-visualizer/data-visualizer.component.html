@@ -1,3 +1,143 @@
-<p>
-  data-visualizer works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Data Visualizer overview'">
+    <h3>Data Visualizer overview </h3>
+    <p>The data visualizer module enables users to easily create dynamic data analysis and visualizations
+      through charts and data tables. You can freely select content (like indicators, periods and organisation units)
+      for your analysis. This module can be accessed by going to "Services - Data Visualizer" in the main menu. The image below
+      shows the viewport of the module. For a quick start:</p>
+
+    <ol>
+      <li>
+        <p>Look under the "Indicator" heading and select an indicator group from the list of groups. </p>
+      </li>
+      <li>
+        <p>Look under "Available indicators" and select a few indicators from the list by double-clicking on them.</p>
+      </li>
+      <li>
+        <p>Click "Update" in the top bar and see the chart unfold.</p>
+      </li>
+    </ol>
+    <p>The data visualizer is designed firstly to be easy-to-use - you can simply select the indicators,
+      data elements, periods and organisation units you want to include and click "Update" to get your visualization.
+      Secondly it is designed to be fast and work well over poor Internet connections - charts are generated in the web browser and
+      very little data is transferred over the Internet.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Selecting chart type'" >
+    <h3>Selecting chart type</h3>
+    <p>The visualizer module provides seven different chart types, each with different characteristics.
+      You can select the type of your chart by clicking on one of the icons in top left bar titled "Chart type".</p>
+
+    <ol>
+      <li>
+        <p>Column chart: Chart which displays information as vertical rectangular columns with
+          lengths proportional to the values they represent. Useful eg. for comparing performance of different districts.</p>
+      </li>
+      <li>
+        <p>Stacked column chart: Chart with vertical rectangular columns where bars representing multiple categories
+          are stacked on top of each other. Useful eg. for displaying trends or sums of related data elements.</p>
+      </li>
+      <li>
+        <p>Bar chart: Same as column chart, only with horizontal bars.</p>
+      </li>
+      <li>
+        <p>Stacked bar chart: Same as stacked column chart, only with horizontal bars.</p>
+      </li>
+      <li>
+        <p>Line chart: Graph wich displays information as a series of points connected by straight lines.
+          Also referred to as time series. Useful eg. to visualize trends in indicator data over multiple time periods.</p>
+      </li>
+      <li>
+        <p>Area chart: Chart which is based on line chart, with the space between the axis and the
+          line filled with colors and the lines stacked on top of each other. Useful for comparing the trends of related indicators.</p>
+      </li>
+      <li>
+        <p>Pie chart: Circular chart divided into sectors (or slices). Useful eg. to visualize the proportion
+          of data for individual data elements compared to the total sum of all data elements in the chart.</p>
+      </li>
+    </ol>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Selecting series, category and filter'">
+    <h3>Selecting series, category and filter</h3>
+    <p>This section lets you define which dimension of the data you want to appear as series, category and filter.
+      This asks for a closer explanation. Dimension in this regard refers to the elements which describe the data values
+      in the system. We have three main dimensions in the system:</p>
+
+    <ol>
+      <li>
+        <p>Data: Includes data elements and indicators, describing the phenomena or event of the data.</p>
+      </li>
+      <li>
+        <p>Periods: Describes when the event took place.</p>
+      </li>
+      <li>
+        <p>Organisation units: Describes where the event took place.</p>
+      </li>
+    </ol>
+
+    <p>The visualization module lets you use these dimensions completely flexible in terms of appearing as series,
+      categories and filter. Understanding these concepts is most easily done by looking at the screenshot from the opening page below: </p>
+    <p>More formally this can be described as following:</p>
+
+    <ol>
+      <li>
+        <p>Series: A series is a set of continous, related elements (eg. periods or data elements) which you want to
+          visualize in order to emphasize trends or relations in its data.</p>
+      </li>
+      <li>
+        <p>Categories: A category is a set of elements (eg. indicators or organisation units) for which you want to compare its data.</p>
+      </li>
+      <li>
+        <p>Filter: Since most charts are two-dimensional, a filter must be used on the third dimension in order to use only
+          a single element for the chart to become meaningful.</p>
+      </li>
+    </ol>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Displaying a chart'" >
+    <h3>Displaying a chart</h3>
+    <p>You can display a chart based on your selections simply by clicking the "Update" button on the top centre menu.
+      This requires that you have selected one or more elements from all of the three dimensions - data, periods and
+      organisation units. Note that "Months this year" from the period dimension and the root organisation unit are selected by default.</p>
+    <p>Notice that you can hide and show individual data series in the chart by clicking directly on the series label
+      in the chart - they appear either at the top or at the left of the chart.</p>
+    <p>If you want to give the chart more space on your screen you can click on the triple-arrow button on the
+      top centre menu. This will collapse the left side menu. You can get this menu back by clicking on the same button again.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Displaying a data table'">
+    <h3>Displaying a data table</h3>
+    <p>After you have rendered a chart you can display the data in a table by clicking on the
+      "Data table" button on the top centre menu (next to "Update"). This will show a table with four columns, one for
+      data (meaning data element or indicator), period, organisation unit and data value. This table can be sorted ascending
+      or descending on any of the columns.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Downloading chart as image or PDF'" >
+    <h3>Downloading chart as image or PDF</h3>
+    <p>After you have rendered a chart you can save that view as file and download it to your local computer by clicking
+      on "Save as" on the top centre menu. You can select between PNG (image) or PDF. The file will be automatically downloaded
+      to your computer - for instance can you now embed the image file into a text document as part of a report.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Saving chart as favorite'" >
+    <h3>Saving chart as favorite</h3>
+    <p>Once you have rendered a chart you can save it as a favorite. Click on the "Favorites" button
+      on the top menu and then on the "Manage favorites" link. In the name field enter the desired name for your chart.
+      By ticking the "System" checkbox the chart will be visible to all users of the system, if you do not tick it the
+      chart will be visible only to yourself. This requres that your user account has the privilege to create system charts.
+      You can rename any favorite by selecting it in the list, modifying its name in the name input field and clicking "Rename".
+      You can delete any favorite by selecting it and then clicking "Delete".</p>
+    <p>These favorite charts can later be included on your personal dashboard. After saving you can navigate to the
+      dashboard module, click on the "Insert" link over the chart areas and select your preferred chart.</p>
+  </div>
+</div>

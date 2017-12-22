@@ -27,9 +27,18 @@
 
 <div id="main" [ngStyle]="{marginLeft: margin}">
 
+  <!--<div style="margin-top: 50px">-->
+    <!--sdjklsjdksj-->
+  <!--</div>-->
+
   <div style="margin-top: 50px;padding-bottom: 20px " class="row">
     <!--<button *ngIf="navMode" class="btn btn-outline-primary" (click)="showSideNav()">Open</button>-->
+
+
     <span *ngIf="navMode" (click)="showSideNav()" ><img src="./assets/side-nav-menu.png" class="menu-button" title="Menu"></span>
+
+
+
     <!--<button *ngIf="!navMode" class="btn btn-outline-primary" (click)="hideSideNav()">Close</button>-->
     <!--<app-side-nav></app-side-nav>-->
     <input type="text" name="search" class="form-control col-4" style="margin-left: 30% " placeholder="Search" (input)="getFilteredList($event)">
@@ -55,7 +64,7 @@
           <div class="card myown-card" *ngFor="let app of listOfApps">
             <div class="my-card-image">
               <div style="width: 100%; height: 250px; text-align: center" >
-                <img src="../assets/icons/dashboard.png" style="width: 280px; height: 250px">
+                <img src="./assets/icons/dashboard.png" style="width: 280px; height: 250px">
                 <!--<img [src]="getIcon(app.launchUrl, app.icons)" style="width: 150px; height: 150px">-->
               </div>
 
@@ -63,9 +72,9 @@
                 <!--<div style="color: white">-->
                   <!--{{app.description}}-->
                 <!--</div>-->
-                <a href="{{app.launchUrl}}">
-                  <button  class="btn btn-outline-primary my-button"
-                           style="margin-top: 40%">use App</button></a>
+                <!--<a href="{{app.launchUrl}}">-->
+                  <!--<button  class="btn btn-outline-primary my-button"-->
+                           <!--style="margin-top: 40%">use App</button></a>-->
                 <button  class="btn btn-outline-primary my-button"
                          style="margin-top: 40%" (click)="showBottomSheet(app)" >get Help</button>
 

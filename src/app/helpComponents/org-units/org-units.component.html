@@ -42,63 +42,7 @@
       Add new button in the top right corner of the list of orgunits. To add a new root orgunit make sure no orgunit
       is selected in the menu and click on "Add new". The details of adding a new orgunit are explained in .</p>
 
-    <h3>Editing organisation units</h3>
-    <p>To edit the properties of an existing orgunit first select its parent (if any) in the left side menu, then
-      locate the orgunit in the listed orgunits, and finally click on the "Edit"  button next to the name of
-      the orgunit that you want to modify. The following properties can be defined in the Edit (or Create new) window:</p>
-
-    <ul>
-      <li>
-        <p>Name: Define the precise name of the orgunit in this field. Each orgunit must have a unique name. </p>
-      </li>
-      <li>
-        <p>Short name: Typically, an abbreviation of the full name.
-          This attribute is often used in reports to display the name of the orgunit, where there is limited space available. </p>
-      </li>
-      <li>
-        <p>Code: In many countries, orgunits are assigned a code. This code can be entered in this field. </p>
-      </li>
-      <li>
-        <p>Opening date: Used to control which orgunits that where existing at a point in time,
-          e.g. when analysing historical data. This attribute is required. The default date for opening of organisation units
-          is 1900-01-01, but can be set to any date (even dates which occur in the future).</p>
-      </li>
-      <li>
-        <p>Registers data: This property is used to identify which orgunits
-          that can register data or not. Sometimes administrative orgunits at higher levels in
-          the hierarchy are not supposed to register any data. This can help control the data entry process as only
-          orgunits with this property set to Yes will be available for data entry. </p>
-      </li>
-      <li>
-        <p>Comment: Any additional information that you would like to add can be put here. </p>
-      </li>
-      <li>
-        <p>Coordinates: This field is used to create the maps in the GIS module.
-          Paste in the coordinates of the orgunit in this field, either a polygon (for orgunits that represent an
-          administrative boundary) or a point (for health facilities). Without this information the GIS module will not work.
-          It might be more efficient to import these coordinates later as a batch job for all orgunits using the import module.
-          See the GIS chapter for more details.</p>
-      </li>
-      <li>
-        <p>URL: You can use this field to insert a URL link to an
-          external web site that has additional information about this specific orgunit.</p>
-      </li>
-      <li>
-        <p>Contact information: A contact person, address, email, and
-          phone number can be entered in these fields. This information can be vital for facilitating follow-up.</p>
-      </li>
-      <li>
-        <p>Datasets: Datasets can be assigned to organisational units here.
-          See the chapter on "Data sets" for more detailed information on assigning datasets to organisational units. </p>
-      </li>
-      <li>
-        <p>Organisation unit groups: Assignments to organisational units group sets can
-          be assigned through the individual drop-down boxes which appear for each group set.</p>
-      </li>
-    </ul>
   </div>
-
-
 
 
   <div *ngIf="selection === 'Editing organisation units'">
