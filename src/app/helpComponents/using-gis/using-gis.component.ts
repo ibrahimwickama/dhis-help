@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-using-gis',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./using-gis.component.css']
 })
 export class UsingGisComponent implements OnInit {
+
+  @Input() selection;
 
   constructor() { }
 

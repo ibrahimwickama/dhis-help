@@ -77,7 +77,7 @@
       </div>
 
       <div *ngIf="selected.key === 'using-gis'" >
-        <app-using-gis></app-using-gis>
+        <app-using-gis [selection]="selectedOption" ></app-using-gis>
       </div>
 
       <div *ngIf="selected.key === 'reports-module'" >
