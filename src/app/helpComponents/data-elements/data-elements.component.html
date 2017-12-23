@@ -1,3 +1,279 @@
-<p>
-  data-elements works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Data elements'">
+    <h3>Data elements</h3>
+    <p>Data elements form the basis of DHIS2. Data elements define what is actually recorded in system, e.g. number of
+      immunisations or number of cases of malaria. The actual creation and definition of the data elements themselves are far
+      beyond the scope of this manual to describe, but it is assumed that an administrator will be provided with a list of
+      standardised data elements for inclusion into the DHIS2 system. </p>
+    <p>To access the data element maintenance module, choose Maintenance -&gt; Data elements and Indicators -&gt; Data element. </p>
+    <p>The ‘Filter by name’ will allow you to filter a range of data elements if you know either the full name of the data element,
+      or just a part of it. Type the name into the search field and any matching data elements are displayed below.
+    You can also choose ‘Filter by group/view all’ to narrow down a data element search within a particular data element group. In default mode, this
+    field will display all the data elements in the application. The ‘Get PDF’ button can be clicked to generate a .pdf file of all the data
+    elements. The 'Sort' button can be used to sort the data elements into alphabetical order. </p>
+    <p>To add a new data element, click the 'Add new' button. There are various options available from this page that allow
+      the user to modify data elements already present in the database. Each of the options are described below in the "Editing data elements". </p>
+
+    <h3>Editing data elements</h3>
+    <p>Click the "Edit" button to modify the properties of a data element that has been previously defined. </p><ul>
+
+    <li>
+      <p>Name: Define the precise name of the data element in this field. Each data element must have a unique name. </p>
+    </li>
+    <li>
+      <p>Short name: Typically, an abbreviation of the full data element name. This attribute is often used in reports
+        to display the name of the data element, where there is limited space available. </p>
+    </li>
+    <li>
+      <p>Alternative name: Allows the definition of an alternative name of the data element. </p>
+    </li>
+    <li>
+      <p>Code: In many countries, data elements are assigned a code. This code can be entered in this field. </p>
+    </li>
+    <li>
+      <p>Description: Allows a full textual description of the data element to be entered. The user should be
+        as precise as possible, and include full information on how the data element is measured and what its meaning is. </p>
+    </li>
+    <li>
+      <p>Active: Defines whether a given data element is active or not. Data elements marked as inactive,
+        will not be displayed in the data entry screens. </p>
+    </li>
+    <li>
+      <p>Domain type: Defines whether a data element is an aggregate or patient type of data element. </p>
+    </li>
+    <li>
+      <p>Value type: Defines the type of data this data element will be used to record.
+        Currently there are four options: number, text, yes/no (boolean), and date. </p>
+    </li>
+    <li>
+      <p>Number type: In order to increase the robustness of data entry, DHIS2 supports several different number
+        types. During data entry, users will be restricted to enter the defined number types only. Each of the available options are described below. </p>
+
+      <ol>
+        <li>
+          <p>Number: This number type supports any real value with a single decimal point, an optional negative sign, and no thousands separators. </p>
+        </li>
+        <li>
+          <p>Integer: Any whole number (positive and negative), including zero.</p>
+        </li>
+        <li>
+          <p>Positive integer: Any whole number greater than (but not including) zero.</p>
+        </li>
+        <li>
+          <p>Negative integer: Any whole number less than (but not including) zero.</p>
+        </li>
+      </ol>
+    </li>
+
+    <li>
+      <p>Aggregation operator: Defines the default aggregation operation that will be used on this data
+        element. Most data elements should have the "SUM" option set. This includes all data elements which should be added together.
+        Other data elements, such as staffing levels, should be set to use the "AVERAGE" operator, when values along the
+        time dimension should not be added together, but rather averaged.</p>
+    </li>
+    <li>
+      <p>URL: A URL having an in-depth description of the data element can be entered in the ‘URL’ field.
+        This could be for instance, a link to a metadata repository or registry that contains detailed technical
+        information about the definition and measurement of the data element. </p>
+    </li>
+    <li>
+      <p>Combination of categories: Defines which category combination the data element should have. </p>
+    </li>
+    <li>
+      <p>Data element group sets: Click the check box to activate this option hen choose which data
+        element group sets this data element should belong to. Available data element group sets are displayed
+        din the upper window. Click the desired data element group set, then the "Add selected" button to add
+        the data element to the group set. To remove a data element from a group set, click the data element group set
+        in the lower list, and then click "Remove selected". </p>
+    </li>
+    <li>
+      <p>Calculated: This option is available only when a data element is created.</p>
+      <p>Select the data elements that will be used to define the calculated data element,
+        and then click "Add selected" to add them calculated data element composition list. Fill in the correct factor
+        for the data element calculation component (defaults to 1). Component elements of the calculated data element can be
+        removed from the definition by pressing the "Remove" button.</p>
+    </li>
+    <li>
+      <p>Aggregation levels: The Aggregation Levels option allows the data element to be aggregated at one or more levels.
+        When the user clicks on the Aggregation levels option, a drop down menu appears which displays available aggregation
+        levels. The desired aggregation level is then selected by clicking the ‘Add Selected’ button. By default,
+        the aggregation will start at the lowest assigned organisation unit. If e.g. Chiefdom is selected below it
+        means that Chiefdom, District, and National aggregates will use Chiefdom (the highest aggregation level available) as the
+        data source, and PHU data will not be included. PHU data will still be available for the PHU level, but not included
+        in aggregations to the levels above. If District and Chiefdom are both selected then the District and National level
+        aggregates will use District data as their source, Chiefdom will use Chiefdom, and PHU will use PHU. Read more about
+        aggregation levels in the Reporting chapter i the section on data sources for reporting.</p>
+    </li>
+    </ul>
+
+    <p>After making the required changes, click ‘Save’ to institute them. The ‘Cancel’ button aborts all changes made.</p>
+
+    <h3>Data element translation</h3>
+    <p>DHIS2 provides functionality to translate existing data elements into other languages. Simply press the translate button
+      to get started. The following dialogue will appear. </p>
+    <p>The reference language is displayed in the upper right portion of the dialogue. Choose a locale to translate
+      the data element into by selecting an option from the locale drop-down menu. Specify the name, short-name and description in
+      the target language. Press "Save" to save your changes. </p>
+    <p>The "Details" section of this dialogue will allow you add a new locale if it is not already present in the database. There are two options:</p>
+
+    <ul>
+    <li>
+      <p>Language code</p>
+      <p>Refers to the ISO 639-1 (two-letter code) language code. Refer to this web page for a detailed listing of language codes. </p>
+    </li>
+    <li>
+      <p>Country code</p>
+      <p>Refers to the ISO 3166-1-alpha-2 code. A complete listing is available here. </p>
+    </li>
+    </ul>
+    <p>The combination of these two codes together, forms a "locale" code, which is composed of the combination of the location and
+      language. A very comprehensive discussion of the technical standard (RFC 3066) is available here. This page provides a very
+      comprehensive list of recognised locale codes. </p>
+
+    <h3>Deleting a data element</h3>
+    <p>Simply press the delete button  to delete a data element. Note that this operation is only possible if there is no data
+      attached to the data element itself. The user will be prompted to ensure that the data element should be deleted.</p>
+
+    <h3>Displaying data element details</h3>
+    <p>This operation displays an in-line panel in the browser which displays all metadata about a given data element.
+      Press the information button to access this view. </p>
+  </div>
+
+
+  <div *ngIf="selection === 'Data element groups'" >
+    <h3>Data element groups</h3>
+    <p>Data element groups provide a mechanism for classifying related data elements into a common theme. For instance,
+      two data elements "Measles immunisation" and "BCG Immunisation" might be grouped together into a data element group "Childhood
+      immunisation". To access the data element group maintenance page, click Maintenance -&gt; Data elements and Indicators -&gt; Data Element Group.</p>
+    <p>Similar to the "Data element" maintenance page, data elements groups can be searched with
+      by entering a search string in the "Filter by name" field. </p>
+    <p>To add a new data element group, click the "Add new" button and the following screen will be displayed:</p>
+    <p>Fill in the "Name" field and then select all data elements that should belong to the group from the left panel.
+      Click the "Move selected" button to add the selected data elements to the data element group. Click the "Remove selected" button
+      to remove all data elements from the group that have been selected in the right panel. Finally, click the "Add" button to
+      save changes, or the "Cancel" button to discard any changes. </p>
+  </div>
+
+
+  <div *ngIf="selection === 'Data element group editor'" >
+    <h3>Data element group editor</h3>
+    <p>The data element group editor provides advanced functionality to the administrator to allow multiple data
+      elements to be added or removed from a group. It is also possible to create new data element groups, rename existing groups, and
+      delete groups entirely. To access the data element group editor, go to "Maintenance -&gt; Data elements and Indicators -&gt; Data Element
+      Group Editor". The following screen will appear.</p>
+    <p>Data element groups area listed alphabetically in the leftmost panel. By clicking on a data element group, the current members
+      of that group (data elements) are listed in the centre panel. Available data elements that can be added to the data element group appear
+      are listed alphabetically in the rightmost panel. To remove an existing data element from the group, click the name of the data element in
+      the centre panel, and then press the "Move right"  button. To add data elements to the group, select them from the leftmost panel,
+      and click the "Move left"  button. Press the "Update data element group member" button to save your changes.</p>
+  </div>
+
+
+  <div *ngIf="selection === 'Data element group sets'">
+    <h3>Data element group sets</h3>
+    <p>Data element group sets allow multiple data element groups to be categorised into a set.
+      Data element group sets are used during analysis and reporting to combine similar data element groups into a common theme.
+      To access the data element group set maintenance module, choose "Maintenance -&gt; Data elements and Indicators -&gt; Data Element Group
+      Set". Similar to the other data element maintenance modules, new data element group sets can be added by pressing the "Add new button".
+      Other operations include Edit, Translate, Delete and Information, similar to the other modules in this section.</p>
+    <p>Existing data element group set members can be edited by clicking the "Edit" button  of the desired data element group set as seen below.</p>
+    <p>Available data element groups are displayed in the left panel. They can be moved into the selected data element group set
+      by pressing the "Move right"  button. Data element groups that are currently members of the data element group set are displayed
+      in the right hand panel. They can be removed from the data element group set by clicking the desired data element group and pressing
+      the "Move left" button. The ordering of the data element groups can be set with the "Move Up"  and "Move Down" arrows. This ordering
+      will be used in the datamart and reports to order the data element groups. Press the "Update" button to save any changes and the "Cancel" button
+      to discard all changes. </p>
+  </div>
+
+
+  <div *ngIf="selection === 'Data element categories'" >
+    <h3>Data element categories</h3>
+    <p>Data element categories can be used to disaggregate data elements into individual atomic components.
+      Data element categories are typically a concept, such as Gender, Age or Disease Status. Data elements such as "Number of cases of
+      confirmed malaria" are often broken into smaller component parts to determine, for instance, the number of confirmed malaria cases of
+      particular age groups. As an example, three data element categories: Under 1, 1-5 and Over 5 could be created. They could be assigned as
+      categories to the data element, which would then create in the data entry screens, three separate fields for this data element namely: </p>
+
+    <ul>
+    <li>
+      <p>Number of confirmed malaria cases (Under 1)</p>
+    </li>
+    <li>
+      <p>Number of confirmed malaria cases (1-5)</p>
+    </li>
+    <li>
+      <p>Number of confirmed malaria cases (Over 5)</p>
+    </li>
+    </ul>
+
+    <p>Effective use of data element categories greatly simplifies the process of setting up the DHIS2 system,
+      as the data element categories can be reused to disaggregate many different data elements. Otherwise, each of the data
+      elements listed above, would need to be created separately. Judicious use of data element categories will greatly simplify
+      the DHIS2 implementation, and allow for subsequent advanced analysis. </p>
+    <p>Data element categories are composed of category options. Category options must be defined when a data element category
+      is created for the first time. Subsequent changes to the data element category, i.e. adding or deleting new category options, are
+      not allowed once the data element category has been created. </p>
+    <p>It is critical that the proper categories and category options are defined in the initial definition step,
+      as further changes to the category and its options will are not possible. </p>
+    <p>To access the data element category maintenance module, press "Maintenance -&gt; Data Elements and Indicators-&gt;Data Element Category".
+      The following screen will be displayed:</p>
+    <p>Similar to the other data element maintains modules, data element categories can be filtered by typing the name
+      of the data element category (or a portion of it) into the "Filter by name" field. To add a new data element category,
+      press the "Add new" button which will then display the following screen:</p>
+    <p>Type the name of the new data element category in the "Name" field in the "Details" region. Category options can be added
+      by typing the name of the category option in the "Category option" region and pressing the "Add category option" button.
+      Category options can be reordered using the "Move Up" and "Move Down" buttons. Categories options can be deleted by selecting
+      the data element category option and pressing the "Delete" button. Once all data element categories options have been added
+      to the data element category, press the "Add" button to save all changes or the "Cancel" button to discard any changes.</p>
+    <p>All data element category options must be added and defined properly in this step. Subsequent alterations to the data
+      element category (other than reordering of the category options themselves) is not possible. </p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Data element category combinations'" >
+    <h3>Data element category combinations</h3>
+    <p>Data element category combinations allow multiple data element categories to be combined into a related set.
+      As an example, a data element "Number of new HIV infections" might be disaggregated according to the following categories. </p>
+
+    <ul>
+    <li>
+      <p>Age: "Under 5", "5-15", "15-24", "24 and above"</p>
+    </li>
+    <li>
+      <p>Gender: Male, Female</p>
+    </li>
+    </ul>
+    <p> In this example, there would be two levels of disaggregation, consisting of two separate data
+      element categories, each consisting of several data element category options. In most HMIS systems, different data elements
+      are disaggregated according to a common set of categories. By combining these different categories into a data element category
+      combination and assigning these combinations to data elements, the appropriate disaggregation levels can be applied efficiently
+      and quickly to a large number of data elements. </p>
+    <p>To access the data element category combination maintenance module, select "Maintenance-&gt;Data element and
+      indicators-&gt;Data element category combinations" from the main DHIS2 menu. As with the other maintains modules, you can
+      filter the listed category combinations by entering the name (or portion thereof) of the category combination. Other operations
+      such as "Edit", "Delete" and "Information" should be familiar to the reader. </p>
+    <p>To add a new category combination, click the "Add new" button. The following dialogue will be displayed. </p>
+    <p>Type the name of the category combination in the "Name" field, and then select the desired categories from the left panel.
+      Press the "Move right" button to add the selected categories to the category combination. Press "Move left" to remove any
+      categories that should not be part of the category combination. </p>
+    <p>Categories can only be added to a category combination at this step. Categories can be removed from category combinations later by
+      editing the category combination, however, it is not allowed to add additional categories once the
+      combination has been created. Ensure that the category combination and its respective categories is
+      final before you create the category combination and assign it to a data element. </p>
+  </div>
+
+
+  <div *ngIf="selection === 'Translations'" >
+    <h3>Translations</h3>
+    <p>DHIS 2 provides functionality for translations of database content like data elements, data element groups,
+      indicators, indicator groups, validation rules and more. These elements can be translated to any number of locales. A locale represents
+      a specific geographical, political, or cultural region. </p>
+    <p>To add a translation click the Translate icon next to the element you would like to translate.
+      Start by selecting the desired locale from the Locale select box. In the Translate screen, select your locale and
+      enter values for the avaliable element properties. The reference property values are shown on the right.
+      These values are the values which have been entered in the regular add or update user interface for the current object.</p>
+    <p>Translations can be enabled by selecting the desired locale under Database Language under User General Settings in the Settings module.</p>
+  </div>
+
+</div>
