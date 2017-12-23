@@ -1,3 +1,80 @@
-<p>
-  data-entry works!
-</p>
+<div class="container-fluid">
+  <div *ngIf="selection === 'Data entry with DHIS 2'">
+    <h3>Data entry with DHIS 2</h3>
+    <p>To open the data entry window click on the services tab displayed in the main menu. A
+    drop down menu will appear listing the services provided by DHIS 2. Click on the Data Entry option.</p>
+    <p>The data entry module is where data is manually registered in the DHIS 2 database. Data is registered for an organisation unit,
+      a period, and a set of data elements (data set) at a time. A data set often corresponds to a paper-based data collection tool. </p>
+    <h3>Selecting the data entry form</h3><p>To start entering data the first step is to open the correct form. Follow these steps:</p>
+
+    <ol>
+    <li>
+      <p> Locate the orgunit you want to register data for in the tree menu to the left. Expand and close branches by
+        clicking on the +/- symbols. A quick way to find an orgunit is to use the search box just above the tree
+        (the green symbol), but you need to write in the full name to get a match.</p>
+    </li>
+    <li>
+      <p>Select a data set from the dropdown list of data sets available to your selected orgunit. </p>
+    </li>
+    <li>
+      <p>Select a period to register data for. The available periods are controlled by the dataset's period type
+        (reporting frequency). You can jump a year back or forward by using the arrows above the period.</p>
+    </li>
+    </ol>
+    <p>By now you should see the data entry form. </p>
+    <p>Depending on how the data entry form has been implemented, you will see three different types
+      of foms: Default forms, section forms, or custom forms. If a custom form exists, it will be displayed,
+      followed in order of precedence by a section form, and finally a default form.</p>
+
+    <h3>Entering data</h3>
+    <p>Simply start entering data by clicking inside the first field and type in the value.
+      Move to the next field using the Tab button. Shift+Tab will take you back one step. The values
+      are saved immediately and do not require any save/finished button click. A green field indicates that the value has been
+      saved in the system (on the server). On a slow connection it might take some time before the values are saved. </p>
+    <p>Input validation: If you type in an invalid value, e.g. a character in a field that only accepts numeric values you will get
+      a pop-up that explains the problem and the field will be coloured yellow (not saved) until you have corrected the value.
+      If you have defined a min/max range for the field (data element+organisation unit combination) a pop-up message
+      will notify you when the value is out of range, and the value will remain unsaved until you have changed
+      the value (or updated the range and then re-entered the value). </p>
+    <p>Disabled fields: If a field is disabled (grey) it means that the field should not be filled. The cursor will automatically
+      jump to the next open field. </p>
+    <p>Data history: By double-clicking on any input field in the form a data history window opens showing the last 12
+      values registered for the current field (organisation unit+data element+categoryoptioncombo) in a bar chart.
+      This window also shows the min and max range and allows for adjusting the range for the specific organisation unit and data element combination. </p>
+    <p>Follow Up: In the data history window there is also a feature to tag or star a value. E.g. a suspicious
+      value that needs further investigation can be kept in the system, but marked for Follow-Up. In the Data
+      Quality module you can run a Follow-Up analysis and view all values marked for Follow-Up, and then later edit the values if proved incorrect. </p>
+
+
+    <h3>Offline data entry</h3>
+    <p> The data entry module will function even if during data entry the Internet connectivity is not stable.
+      In order to utilize this functionality, you must login to the server while the Internet is functional, but
+      if during data entry, the Internet link between your computer and the server becomes unstable, data can still be entered into
+      the data entry form, saved to your local computer, and then pushed to the server once the Internet connectivity has been restored. Data can be entered
+    and stored locally while being offline and uploaded to the central server when on-line. This means that the on-line deployment strategy
+    will be more viable in areas with unstable Internet connectivity. The total bandwidth usage is greatly reduced since forms no longer are
+    retrieved from the server for each rendering.</p>
+    <p>When the server is able to be reached through the Internet connection, a message is displayed at the top of the data entry screen below. </p>
+    <p>If the Internet connection should disconnect for some reason during the data entry process, this will be detected by the application, and
+      you will be informed that your data will be stored locally. </p>
+    <p>Data entry can proceed as normal. Once you have entered all of the necessary data, and the application
+      detects that the server is back on-line, you will be informed that you have data which needs to be synchronized with the server. </p>
+    <p>Once the data has successfully synchronized with the server, you will receive a confirmation message that the data has been
+      successfully uploaded to the server. </p>
+  </div>
+
+
+
+  <div *ngIf="selection === 'Validating data in the form'">
+    <h3>Validating data in the form</h3>
+    <p>When all the available values for the form has been filled in you can run a validation check on the data
+      in the form. Click on the "Run Validation" button in the top right corner. All validation rules which involves data elements
+      in the current form (dataset) will be run against the new data. Upon completion you will be presented with a list of
+      violations or a simply a message that says "The data entry screen successfully passed validation". See the Data
+      Quality chapter for information on how to define such validation rules.</p>
+    <p>When you have corrected any erroneous values and are done with the form the recommended practice
+      is to click on the <b>Complete button</b> below the form to register the form as complete. This information is used when
+      generating completeness reports for district, county, province or the national level.</p>
+
+  </div>
+</div>

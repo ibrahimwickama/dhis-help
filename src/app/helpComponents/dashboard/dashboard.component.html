@@ -1,0 +1,67 @@
+<div class="container-fluid">
+  <div *ngIf="selection === 'Setting up the dashboard'" >
+    <h3>Setting up the dashboard</h3>
+    <p>Setting the dashboard this is done by selection any favorite recent dashboard available on the top menu row under search text in put field.
+    Where this is achieved by clicking just your favorite dashboard or recent used dashboard to make it active for use and display </p>
+  </div>
+
+
+  <div *ngIf="selection === 'Creating new dashboard'">
+    <h3>Creating new DashBoard</h3>
+    <p>This is done by doing the following steps:</p>
+    <ol>
+      <li>
+        <p>Click <b>Add</b> button on top left row on current active dashboard.</p>
+      </li>
+      <li>
+        <p>Add components by searching from the search area in the middle section of the dashboard.
+          This components may be saved charts, pivot tables, reports, GIS reports etc.</p>
+      </li>
+      <li>
+        <p>After search result found and displayed, then click add button on the right side of particular item to be added to the dashboard</p>
+      </li>
+    </ol>
+
+    <h3>Manage dashboard components</h3>
+    <p>Dashboard components are easy to use, where by they help user manage the added item to the dashboard.
+      This items are <b> Resize, Remove, Explore and  Share interpretation</b> </p>
+    <ol>
+      <li>
+        <p>Resize: This option expands your selected card for better view also strectsh back to default size when its clicked again.</p>
+      </li>
+      <li>
+        <p>Remove: This option when clicked it remove the selected component from dashboard. Its also useful in removing duplicated components.</p>
+      </li>
+      <li>
+        <p>Explore: This option is useful on times when you need to edit the desired component from dashboard,
+          so when explore option is clicked it opens the particular application of the component on the dashboard.
+          Thus when it gives you abilities to edit the chart or table or report</p>
+      </li>
+    </ol>
+
+  </div>
+
+
+  <div *ngIf="selection === 'Manage dashboard'">
+    <h3>Manage dashboard</h3>
+    <p>In dashboard management there are options to which helps you manage the current dashboard,
+      and this options are <b>Rename, message, delete, translate</b> </p>
+
+    <ol>
+      <li>
+        <p>Rename: This option gives user the choice to edit the current dashboard name to a new name desired.</p>
+      </li>
+      <li>
+        <p>Message: This option when clicked adds the message component to the current dashboard, so as to quick access the messages.</p>
+      </li>
+      <li>
+        <p>Delete: This option when clicked it deletes the current dashboard from your dashboard lists.</p>
+      </li>
+      <li>
+        <p>Translate: Its very useful option that translates your current dashboard to user chosen language of preference.</p>
+      </li>
+    </ol>
+
+  </div>
+
+</div>

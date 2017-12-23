@@ -84,9 +84,14 @@
         <app-reports-module [selection]="selectedOption" ></app-reports-module>
       </div>
 
-      <div *ngIf="selected.key === 'data-entry'" >
-       <app-data-entry></app-data-entry>
+      <div *ngIf="selected.key === 'dashboard-module'" >
+        <app-dashboard [selection]="selectedOption" ></app-dashboard>
       </div>
+
+      <div *ngIf="selected.key === 'data-entry'" >
+       <app-data-entry [selection]="selectedOption" ></app-data-entry>
+      </div>
+
 
       <div *ngIf="selected.key === 'data-administration'" >
         <app-data-administration></app-data-administration>

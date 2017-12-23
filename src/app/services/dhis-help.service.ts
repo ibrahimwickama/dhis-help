@@ -155,7 +155,9 @@ export class DhisHelpService {
       {
         name: "DashBoards",
         description: "",
-        options:['Setting up the dashboard'],
+        options:['Setting up the dashboard',
+        'Creating new dashboard',
+        'Manage dashboard'],
         key: "dashboard-module"
       },
 

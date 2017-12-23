@@ -11,7 +11,6 @@ import { IArchiveComponent } from './pages/i-archive/i-archive.component';
 import { IDashboardComponent } from './pages/i-dashboard/i-dashboard.component';
 import { PivotTableComponent } from './pages/pivot-table/pivot-table.component';
 import { UserSupportAppComponent } from './pages/user-support-app/user-support-app.component';
-import { DataEntryComponent } from './pages/data-entry/data-entry.component';
 import { ReportsComponent } from './pages/reports/reports.component';
 import { EventCaptureComponent } from './pages/event-capture/event-capture.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -35,6 +34,8 @@ import { DataAdministrationComponent } from './helpComponents/data-administratio
 import { DataElementsComponent } from './helpComponents/data-elements/data-elements.component';
 import { ImportExportComponent } from './helpComponents/import-export/import-export.component';
 import {DataVisualizerComponent} from "./helpComponents/data-visualizer/data-visualizer.component";
+import {DataEntryComponent} from "./helpComponents/data-entry/data-entry.component";
+import { DashboardComponent } from './helpComponents/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import {DataVisualizerComponent} from "./helpComponents/data-visualizer/data-vis
     ReportsModuleComponent,
     DataAdministrationComponent,
     DataElementsComponent,
-    ImportExportComponent
+    ImportExportComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule, MenuModule
