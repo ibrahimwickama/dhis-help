@@ -64,7 +64,7 @@
           <div class="card myown-card" *ngFor="let app of listOfApps">
             <div class="my-card-image">
               <div style="width: 100%; height: 250px; text-align: center" >
-                <img src="./assets/icons/dashboard.png" style="width: 280px; height: 250px">
+                <img src="{{app.icon}}" style="width: 280px; height: 250px">
                 <!--<img [src]="getIcon(app.launchUrl, app.icons)" style="width: 150px; height: 150px">-->
               </div>
 
