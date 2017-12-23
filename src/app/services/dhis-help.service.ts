@@ -10,7 +10,7 @@ export class DhisHelpService {
     let components = [
       {
         name: "Settings",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/settings.png",
         description: "Settings guide gives you clear help on Dhis settings options",
         options:['User general settings',
           'User message settings',
@@ -22,7 +22,7 @@ export class DhisHelpService {
 
       {
         name: "Data Quality functionalities",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/dataquaity.png",
         description: "Data Quality functionalities guide gives you clear help on Data quality in Dhis",
         options:['Running Validation Rule Analysis',
           'Std Dev Outlier Analysis',
@@ -33,7 +33,7 @@ export class DhisHelpService {
 
       {
         name: "Import-Export",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/importexport.png",
         description: "Settings guide gives you clear help on Dhis settings options",
         options:['Exporting data',
           'Importing data'],
@@ -42,7 +42,7 @@ export class DhisHelpService {
 
       {
         name: "Datasets and Data entry forms",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/dataset.png",
         description: "Datasets and Data entry forms guide gives you more details on Datasets on various forms in data entry",
         options:['Datasets',
           'Dataset management',
@@ -53,7 +53,7 @@ export class DhisHelpService {
 
       {
         name: "Organisation units",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/orgunit.png",
         description: "",
         options:['Organisation Unit hierarchy',
           'Organisation units',
@@ -69,7 +69,7 @@ export class DhisHelpService {
 
       {
         name: "About DHIS 2",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/aboutdhis.png",
         description: "Learn the story behind DHIS",
         options:['Background of DHIS 2'],
         key: "about-dhis"
@@ -77,7 +77,7 @@ export class DhisHelpService {
 
       {
         name: "Get started with DHIS 2",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/startdhis.png",
         description: "",
         options:['Getting started with DHIS 2',
           'Logging on to DHIS 2',
@@ -89,7 +89,7 @@ export class DhisHelpService {
 
       {
         name: "Indicators",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/indicator.png",
         description: "",
         options:['Indicators',
           'Indicator types',
@@ -101,7 +101,7 @@ export class DhisHelpService {
 
       {
         name: "User management",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/user.png",
         description: "",
         options:['Creating new users and roles',
           'User maintenance',
@@ -128,7 +128,7 @@ export class DhisHelpService {
 
       {
         name: "Using GIS",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/gis.png",
         description: "",
         options:['Thematic layer 1 and 2',
           'Facility layer',
@@ -144,7 +144,7 @@ export class DhisHelpService {
 
       {
         name: "Reports",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/reports.png",
         description: "",
         options:['Reporting functionality in DHIS 2',
           'Using standard reports',
@@ -158,7 +158,7 @@ export class DhisHelpService {
 
       {
         name: "Data entry",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/dataentry.png",
         description: "",
         options:['Data entry with DHIS 2',
           'Validating data in the form'],
@@ -167,7 +167,7 @@ export class DhisHelpService {
 
       {
         name: "DashBoards",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/dashboard.png",
         description: "",
         options:['Setting up the dashboard',
         'Creating new dashboard',
@@ -177,7 +177,7 @@ export class DhisHelpService {
 
       {
         name: "Data Administration",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/dataadmin.png",
         description: "",
         options:['Data browser',
           'Data integrity',
@@ -202,7 +202,7 @@ export class DhisHelpService {
 
       {
         name: "Data elements",
-        icon: "./assets/icons/visualize.png",
+        icon: "./assets/icons/dataelements.png",
         description: "",
         options:['Data elements',
           'Data element groups',
